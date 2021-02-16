@@ -12,5 +12,5 @@ build
 README.docx
 
 # blockchain
-./blockchain/truffle-config.js
-./blockchain/myblockchainmember.env
+/blockchain/truffle-config.js
+/blockchain/myblockchainmember.env
