@@ -10,7 +10,7 @@ module.exports = {
     abs_dbrablockchainxppfll_dbrablockchainxppfll_dbrablockchainxppfll: {
       network_id: "*",
       gasPrice: 0,
-      provider: new HDWalletProvider(fs.readFileSync('C:/Users/leppa/workspace/Projects/CS6305_FinalProject/blockchain/myblockchainmember.env', 'utf-8'), "https://dbrablockchainxppfll.blockchain.azure.com:3200/Vhrludk2O09-0hZ7aDK1y9ki")
+      provider: new HDWalletProvider(fs.readFileSync('C:/Users/dbrey/drewbreyer/CS6305_FinalProject/blockchain/myblockchainmember.env', 'utf-8'), "https://dbrablockchainxppfll.blockchain.azure.com:3200/Vhrludk2O09-0hZ7aDK1y9ki")
     }
   },
   compilers: {
