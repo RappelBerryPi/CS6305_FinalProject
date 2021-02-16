@@ -10,3 +10,7 @@ build
 # environment variables
 .env
 README.docx
+
+# blockchain
+/blockchain/truffle-config.js
+/blockchain/myblockchainmember.env
