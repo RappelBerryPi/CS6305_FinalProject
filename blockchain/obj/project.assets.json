@@ -3609,19 +3609,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dbrey\\.nuget\\packages\\": {}
+    "C:\\Users\\leppa\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dbrey\\drewbreyer\\CS6305_FinalProject\\blockchain\\Blockchain.Contracts.csproj",
+      "projectUniqueName": "C:\\Users\\leppa\\workspace\\Projects\\CS6305_FinalProject\\blockchain\\Blockchain.Contracts.csproj",
       "projectName": "Blockchain.Contracts",
-      "projectPath": "C:\\Users\\dbrey\\drewbreyer\\CS6305_FinalProject\\blockchain\\Blockchain.Contracts.csproj",
-      "packagesPath": "C:\\Users\\dbrey\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dbrey\\drewbreyer\\CS6305_FinalProject\\blockchain\\obj\\",
+      "projectPath": "C:\\Users\\leppa\\workspace\\Projects\\CS6305_FinalProject\\blockchain\\Blockchain.Contracts.csproj",
+      "packagesPath": "C:\\Users\\leppa\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\leppa\\workspace\\Projects\\CS6305_FinalProject\\blockchain\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\dbrey\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\leppa\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

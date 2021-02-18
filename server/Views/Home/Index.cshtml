@@ -1,8 +1,22 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    var Hello = ViewData["FirstHello"] as server.Models.Database.Hello;
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <table class="table">
+        <tr>
+            <th> Header </th>
+            <th> Message </th>
+            <th> Id </th>
+        </tr>
+        <tr>
+            <th> @Hello.Header </th>
+            <th> @Hello.Message </th>
+            <th> @Hello.Id </th>
+        </tr>
+    </table>
+    <p>  </p>
 </div>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\leppa\\workspace\\Projects\\CS6305_FinalProject\\server\\server.csproj": {}
+    "C:\\Users\\leppa\\workspace\\Projects\\CS6305_FinalProject\\server\\server.csproj": {}
   },
   "projects": {
-    "c:\\Users\\leppa\\workspace\\Projects\\CS6305_FinalProject\\blockchain\\Blockchain.Contracts.csproj": {
+    "C:\\Users\\leppa\\workspace\\Projects\\CS6305_FinalProject\\blockchain\\Blockchain.Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\leppa\\workspace\\Projects\\CS6305_FinalProject\\blockchain\\Blockchain.Contracts.csproj",
+        "projectUniqueName": "C:\\Users\\leppa\\workspace\\Projects\\CS6305_FinalProject\\blockchain\\Blockchain.Contracts.csproj",
         "projectName": "Blockchain.Contracts",
-        "projectPath": "c:\\Users\\leppa\\workspace\\Projects\\CS6305_FinalProject\\blockchain\\Blockchain.Contracts.csproj",
+        "projectPath": "C:\\Users\\leppa\\workspace\\Projects\\CS6305_FinalProject\\blockchain\\Blockchain.Contracts.csproj",
         "packagesPath": "C:\\Users\\leppa\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\leppa\\workspace\\Projects\\CS6305_FinalProject\\blockchain\\obj\\",
+        "outputPath": "C:\\Users\\leppa\\workspace\\Projects\\CS6305_FinalProject\\blockchain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -68,14 +68,14 @@
         }
       }
     },
-    "c:\\Users\\leppa\\workspace\\Projects\\CS6305_FinalProject\\server\\server.csproj": {
+    "C:\\Users\\leppa\\workspace\\Projects\\CS6305_FinalProject\\server\\server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\leppa\\workspace\\Projects\\CS6305_FinalProject\\server\\server.csproj",
+        "projectUniqueName": "C:\\Users\\leppa\\workspace\\Projects\\CS6305_FinalProject\\server\\server.csproj",
         "projectName": "server",
-        "projectPath": "c:\\Users\\leppa\\workspace\\Projects\\CS6305_FinalProject\\server\\server.csproj",
+        "projectPath": "C:\\Users\\leppa\\workspace\\Projects\\CS6305_FinalProject\\server\\server.csproj",
         "packagesPath": "C:\\Users\\leppa\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\leppa\\workspace\\Projects\\CS6305_FinalProject\\server\\obj\\",
+        "outputPath": "C:\\Users\\leppa\\workspace\\Projects\\CS6305_FinalProject\\server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -95,8 +95,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "c:\\Users\\leppa\\workspace\\Projects\\CS6305_FinalProject\\blockchain\\Blockchain.Contracts.csproj": {
-                "projectPath": "c:\\Users\\leppa\\workspace\\Projects\\CS6305_FinalProject\\blockchain\\Blockchain.Contracts.csproj"
+              "C:\\Users\\leppa\\workspace\\Projects\\CS6305_FinalProject\\blockchain\\Blockchain.Contracts.csproj": {
+                "projectPath": "C:\\Users\\leppa\\workspace\\Projects\\CS6305_FinalProject\\blockchain\\Blockchain.Contracts.csproj"
               }
             }
           }
@@ -111,6 +111,20 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
             "Nethereum.Autogen.ContractApi": {
               "target": "Package",
               "version": "[3.6.2, )"

@@ -1,0 +1,9 @@
+C:\Users\leppa\workspace\Projects\CS6305_FinalProject\blockchain\bin\Debug\netstandard2.0\Blockchain.Contracts.deps.json
+C:\Users\leppa\workspace\Projects\CS6305_FinalProject\blockchain\bin\Debug\netstandard2.0\Blockchain.Contracts.dll
+C:\Users\leppa\workspace\Projects\CS6305_FinalProject\blockchain\bin\Debug\netstandard2.0\Blockchain.Contracts.pdb
+C:\Users\leppa\workspace\Projects\CS6305_FinalProject\blockchain\obj\Debug\netstandard2.0\Blockchain.Contracts.csprojAssemblyReference.cache
+C:\Users\leppa\workspace\Projects\CS6305_FinalProject\blockchain\obj\Debug\netstandard2.0\Blockchain.Contracts.AssemblyInfoInputs.cache
+C:\Users\leppa\workspace\Projects\CS6305_FinalProject\blockchain\obj\Debug\netstandard2.0\Blockchain.Contracts.AssemblyInfo.cs
+C:\Users\leppa\workspace\Projects\CS6305_FinalProject\blockchain\obj\Debug\netstandard2.0\Blockchain.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\leppa\workspace\Projects\CS6305_FinalProject\blockchain\obj\Debug\netstandard2.0\Blockchain.Contracts.dll
+C:\Users\leppa\workspace\Projects\CS6305_FinalProject\blockchain\obj\Debug\netstandard2.0\Blockchain.Contracts.pdb

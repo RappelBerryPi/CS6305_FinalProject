@@ -11,7 +11,8 @@
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
-            "problemMatcher": "$msCompile"
+            "problemMatcher": "$msCompile",
+            "dependsOn": "efcoreMigrate"
         },
         {
             "label": "publish",
@@ -37,6 +38,70 @@
                 "/consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "efcoreMigrate",
+            "type": "shell",
+            "command": "${workspaceFolder}/ef_migrate.ps1",
+            "args": [
+                "-Run_Migration",
+                "${input:runMigration}",
+                "-Unique_Identifier",
+                "'${input:Identifier}'"
+            ]
+        },
+    ],
+    "windows": {
+        "options": {
+            "shell": {
+                "executable": "C:/Program Files/PowerShell/7/pwsh.exe",
+                "args": [
+                    "-NoProfile",
+                    "-ExecutionPolicy",
+                    "Bypass",
+                    "-Command"
+                ]
+            }
+        }
+    },
+    "linux": {
+        "options": {
+            "shell": {
+                "executable": "/usr/bin/pwsh",
+                "args": [
+                    "-NoProfile",
+                    "-Command"
+                ]
+            }
+        }
+    },
+    "osx": {
+        "options": {
+            "shell": {
+                "executable": "/usr/local/bin/pwsh",
+                "args": [
+                    "-NoProfile",
+                    "-Command"
+                ]
+            }
+        }
+    },
+    "inputs": [
+        {
+            "id": "runMigration",
+            "type": "pickString",
+            "default": "No",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "description": "Did you change any models and do you want update the database?"
+        },
+        {
+            "id": "Identifier",
+            "type": "promptString",
+            "description": "Please put in a Memorable unique Identifier for this migration",
+            "default": ""
         }
     ]
 }
