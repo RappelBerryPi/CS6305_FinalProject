@@ -7,3 +7,5 @@ if ($Run_Migration -eq "Yes" -or $Run_Migration -eq "y") {
     $Unique_Identifier = $Unique_Identifier.Replace(" ","_").Replace(":","_").Replace(",","")
     & { dotnet ef migrations add $Unique_Identifier --context server.Models.Database.DefaultContext}
 }
+
+# test edit
