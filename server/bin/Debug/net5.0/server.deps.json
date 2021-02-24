@@ -27,6 +27,7 @@
         "dependencies": {
           "Blockchain.Contracts": "1.0.0",
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "5.0.3",
+          "Microsoft.EntityFrameworkCore": "5.0.3",
           "Microsoft.EntityFrameworkCore.Design": "5.0.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.3",
           "Nethereum.Autogen.ContractApi": "3.6.2",

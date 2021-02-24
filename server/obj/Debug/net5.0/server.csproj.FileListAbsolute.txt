@@ -6,8 +6,6 @@ C:\Users\leppa\workspace\Projects\CS6305_FinalProject\server\obj\Debug\net5.0\se
 C:\Users\leppa\workspace\Projects\CS6305_FinalProject\server\obj\Debug\net5.0\server.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\leppa\workspace\Projects\CS6305_FinalProject\server\obj\Debug\net5.0\server.RazorAssemblyInfo.cache
 C:\Users\leppa\workspace\Projects\CS6305_FinalProject\server\obj\Debug\net5.0\server.RazorAssemblyInfo.cs
-C:\Users\leppa\workspace\Projects\CS6305_FinalProject\server\bin\Debug\net5.0\appsettings.Development.json
-C:\Users\leppa\workspace\Projects\CS6305_FinalProject\server\bin\Debug\net5.0\appsettings.json
 C:\Users\leppa\workspace\Projects\CS6305_FinalProject\server\bin\Debug\net5.0\omnisharp.json
 C:\Users\leppa\workspace\Projects\CS6305_FinalProject\server\bin\Debug\net5.0\server.exe
 C:\Users\leppa\workspace\Projects\CS6305_FinalProject\server\bin\Debug\net5.0\server.deps.json
@@ -404,3 +402,5 @@ C:\Users\leppa\workspace\Projects\CS6305_FinalProject\server\bin\Debug\net5.0\tr
 C:\Users\leppa\workspace\Projects\CS6305_FinalProject\server\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\leppa\workspace\Projects\CS6305_FinalProject\server\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\leppa\workspace\Projects\CS6305_FinalProject\server\obj\Debug\net5.0\server.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\leppa\workspace\Projects\CS6305_FinalProject\server\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\leppa\workspace\Projects\CS6305_FinalProject\server\bin\Debug\net5.0\appsettings.json

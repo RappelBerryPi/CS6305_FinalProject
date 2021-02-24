@@ -1,6 +1,7 @@
-﻿@{
+﻿@model server.Models.Database.Hello
+@{
     ViewData["Title"] = "Home Page";
-    var Hello = ViewData["FirstHello"] as server.Models.Database.Hello;
+    var Hellos = ViewData["Hellos"] as List<server.Models.Database.Hello>;
 }
 
 <div class="text-center">
@@ -12,11 +13,19 @@
             <th> Message </th>
             <th> Id </th>
         </tr>
-        <tr>
-            <th> @Hello.Header </th>
-            <th> @Hello.Message </th>
-            <th> @Hello.Id </th>
-        </tr>
+        @foreach (var hello in Hellos) {
+            <tr>
+                <td> @hello.Header </td>
+                <td> @hello.Message </td>
+                <td> @hello.Id </td>
+            </tr>
+            
+        }
     </table>
     <p>  </p>
+    @using (Html.BeginForm()) {
+        @Html.EditorFor(m => m.Header)
+        @Html.EditorFor(m => m.Message)
+        <input type="submit">
+    }
 </div>

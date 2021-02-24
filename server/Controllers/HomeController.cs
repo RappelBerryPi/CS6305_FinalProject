@@ -16,6 +16,7 @@ namespace server.Controllers {
         }
 
         public IActionResult Index() {
+            /*
             Hello hello = new Hello {
                 Header = "My Message",
                 Message = "Hello World"
@@ -25,14 +26,20 @@ namespace server.Controllers {
                 this.context.Add(hello);
                 this.context.SaveChanges();
             }
+            */
 
             /* the below two lines do the same thing */
-            var firstHello = (from x in this.context.Hellos
-                             select x).First();
-            //firstHello = this.context.Hellos.First();
-
-            this.ViewData.Add("FirstHello", firstHello);
+            var Hellos = this.context.Hellos.OrderBy(H => H.Id).ToList();
+            this.ViewData.Add("Hellos", Hellos);
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Index(Hello hello) {
+            this.context.Add(hello);
+            this.context.SaveChanges();
+            System.Console.WriteLine(hello);
+            return RedirectToAction("Index");
         }
 
         public IActionResult Privacy() {
