@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using server.Models.Database;
+using server.Services;
 
 namespace server {
     public class Startup {
@@ -23,7 +24,7 @@ namespace server {
             services.AddControllersWithViews();
             services.AddDbContext<server.Models.Database.DefaultContext>( o => o.UseSqlServer(Configuration.GetConnectionString("DefaultDatabase")));
 
-            services.AddDefaultIdentity<UserInfo>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<DefaultContext>();
+            services.AddDefaultIdentity<UserInfo>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<DefaultContext>().AddTokenProvider<GoogleAuthenticatorTokenProvider>("GoogleAuthenticator");
 
             services.Configure<IdentityOptions>(options => {
                 options.Password.RequireDigit = true;

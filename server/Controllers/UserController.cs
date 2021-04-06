@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
@@ -29,10 +30,61 @@ namespace server.Controllers {
             return View();
         }
 
-        [HttpGet]
+        [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginUserForm model, string returnUrl = null) {
+            ViewData["ReturnURL"] = returnUrl;
+            if (ModelState.IsValid) {
+                var result = await this.signInManager.PasswordSignInAsync(model.UserName, model.Password, true, false);
+                if (result.RequiresTwoFactor) {
+                    return RedirectToAction(nameof(LoginWith2fa), new { returnUrl });
+                } else {
+                    ModelState.AddModelError(string.Empty, "Login Invalid.");
+                    return View(model);
+                }
+            }
+            return View(model);
+
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public async Task<IActionResult> LoginWith2fa(string returnUrl = null) {
+            var user = this.signInManager.GetTwoFactorAuthenticationUserAsync();
+            if (user == null) {
+                throw new ApplicationException("Unable to load two-factor authentication user.");
+            }
+
+            ViewData["ReturnUrl"] = returnUrl;
+            return View();
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> LoginWith2fa(LoginWith2faViewModel model, string returnUrl = null) {
+            if (!ModelState.IsValid) {
+                return View(model);
+            }
+
+            var user = await this.signInManager.GetTwoFactorAuthenticationUserAsync();
+            if (user == null) {
+                throw new ApplicationException("unable to load user");
+            }
+
+            string authenticatorcode     = ""; //model.GetHashCode.Accepted......
+            var result = await this.signInManager.TwoFactorAuthenticatorSignInAsync(authenticatorcode, false, false);
+            if (result.Succeeded) {
+                if (Url.IsLocalUrl(returnUrl)) {
+                    return Redirect(returnUrl);
+                } else {
+                    return RedirectToAction(nameof(HomeController.Index), "Home");
+                }
+            } else {
+                ModelState.AddModelError(string.Empty, "Invalid Authenticator code.");
+                return View();
+            }
 
         }
 
@@ -40,7 +92,7 @@ namespace server.Controllers {
 
 }
 
-// finish
+// The code is written out now. create the pages and test it all.....
 
 /*
 https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/consumer-apis/password-hashing?view=aspnetcore-5.0

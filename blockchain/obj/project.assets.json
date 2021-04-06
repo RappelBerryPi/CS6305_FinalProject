@@ -998,7 +998,7 @@
       ]
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "bLpT1f/SFlO1CzqXG12KnJzpZs6lv24uX2Rzi4Fmm0noJpNlnWRVryuO3yK18Ca04t/YHcO1e1Z0WDfjseqNzw==",
+      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
@@ -1514,7 +1514,7 @@
       ]
     },
     "System.Collections.NonGeneric/4.3.0": {
-      "sha512": "/D3jtX0+u5+6rS3RGvTMyICPpIuzBgqtUYLjK1aXLua0nWH4JpM1H/tRk1Uxs6Fo0fe22jyJaTpoXPSu0il8Ug==",
+      "sha512": "prtjIEMhGUnQq6RnPEYLpFt8AtLbp9yq2zxOSrY7KJJZrw25Fi97IzBqY7iqssbM61Ek5b8f3MG/sG1N2sN5KA==",
       "type": "package",
       "path": "system.collections.nongeneric/4.3.0",
       "files": [
@@ -3661,7 +3661,7 @@
       ]
     },
     "System.Xml.XmlDocument/4.3.0": {
-      "sha512": "xsnq6w3/S+NeYkUtxoCEDAn2Z+AkgvGLvJnslrTRte4jEU+fkR3DVG+s0sBmQYQ4c3r8949PaGg8AnRb9bBc2w==",
+      "sha512": "lJ8AxvkX7GQxpC6GFCeBj8ThYVyQczx2+f/cWHJU8tjS7YfI6Cv6bon70jVEgs2CiFbmmM8b9j1oZVx0dSI2Ww==",
       "type": "package",
       "path": "system.xml.xmldocument/4.3.0",
       "files": [
@@ -3707,23 +3707,19 @@
     ]
   },
   "packageFolders": {
-    "/home/ryan/.nuget/packages/": {},
-    "/usr/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\leppa\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/media/ryan/Workspace/Projects/CS6305_FinalProject/blockchain/Blockchain.Contracts.csproj",
+      "projectUniqueName": "C:\\Users\\leppa\\workspace\\CS6305_Final_Project\\CS6305_FinalProject\\blockchain\\Blockchain.Contracts.csproj",
       "projectName": "Blockchain.Contracts",
-      "projectPath": "/media/ryan/Workspace/Projects/CS6305_FinalProject/blockchain/Blockchain.Contracts.csproj",
-      "packagesPath": "/home/ryan/.nuget/packages/",
-      "outputPath": "/media/ryan/Workspace/Projects/CS6305_FinalProject/blockchain/obj/",
+      "projectPath": "C:\\Users\\leppa\\workspace\\CS6305_Final_Project\\CS6305_FinalProject\\blockchain\\Blockchain.Contracts.csproj",
+      "packagesPath": "C:\\Users\\leppa\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\leppa\\workspace\\CS6305_Final_Project\\CS6305_FinalProject\\blockchain\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "/usr/share/dotnet/sdk/NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "/home/ryan/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\leppa\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
@@ -3768,7 +3764,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.201/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
