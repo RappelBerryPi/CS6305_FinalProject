@@ -11,6 +11,7 @@
         "NewLinesForBracesInAccessors": false,
         "NewLineForElse": false,
         "NewLineForCatch": false,
-        "NewLineForFinally": false
+        "NewLineForFinally": false,
+        "SpaceAfterCast": true
     }
 }
