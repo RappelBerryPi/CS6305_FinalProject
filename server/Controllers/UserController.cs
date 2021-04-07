@@ -53,7 +53,7 @@ namespace server.Controllers {
         [HttpGet]
         [AllowAnonymous]
         public async Task<IActionResult> LoginWith2fa(string returnUrl = null) {
-            var user = this.signInManager.GetTwoFactorAuthenticationUserAsync();
+            var user = await this.signInManager.GetTwoFactorAuthenticationUserAsync();
             if (user == null) {
                 throw new ApplicationException("Unable to load two-factor authentication user.");
             }
