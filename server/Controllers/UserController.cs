@@ -1,10 +1,12 @@
 using System;
 using System.Threading.Tasks;
+using System.Web;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Nethereum.Hex.HexConvertors.Extensions;
 using server.Models.Database;
 using server.Models.Validation;
 
@@ -15,7 +17,7 @@ namespace server.Controllers {
         private readonly SignInManager<UserInfo> signInManager;
         private readonly ILogger logger;
 
-        public UserController( UserManager<UserInfo> userManager, SignInManager<UserInfo> signInManager, ILogger<UserController> logger) {
+        public UserController(UserManager<UserInfo> userManager, SignInManager<UserInfo> signInManager, ILogger<UserController> logger) {
             this.userManager = userManager;
             this.signInManager = signInManager;
             this.logger = logger;
@@ -73,7 +75,7 @@ namespace server.Controllers {
                 throw new ApplicationException("unable to load user");
             }
 
-            string authenticatorcode     = ""; //model.GetHashCode.Accepted......
+            string authenticatorcode = ""; //model.GetHashCode.Accepted......
             var result = await this.signInManager.TwoFactorAuthenticatorSignInAsync(authenticatorcode, false, false);
             if (result.Succeeded) {
                 if (Url.IsLocalUrl(returnUrl)) {
@@ -88,11 +90,59 @@ namespace server.Controllers {
 
         }
 
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult CreateNewUser(string returnUrl = null) {
+            ViewData["ReturnUrl"] = returnUrl;
+            return View();
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateNewUser(NewUserForm newUserForm, string returnUrl = null) {
+            if (ModelState.IsValid) {
+                var user = new UserInfo();
+
+                // Generate blockchain address 
+                var ecKey = Nethereum.Signer.EthECKey.GenerateKey();
+                var privatekey = ecKey.GetPrivateKeyAsBytes().ToHex();
+                var account = new Nethereum.Web3.Accounts.Account(privatekey);
+
+                user.UserName = newUserForm.UserName;
+                user.Email = newUserForm.EmailAddress;
+                user.FirstName = newUserForm.FirstName;
+                user.LastName = newUserForm.LastName;
+                user.TwoFactorEnabled = true;
+                user.BlockchainAddress = account.Address;
+                user.PrivateKey = account.PrivateKey;
+
+                var result = await this.userManager.CreateAsync(user, newUserForm.Password);
+                if (result.Succeeded) {
+                    var result2 = this.userManager.GenerateTwoFactorTokenAsync(user, "GoogleAuthenticator");
+                    if (result2.IsCompletedSuccessfully) {
+                        user.DualAuthenticationSecretKey = result2.Result;
+                    }
+                    await this.signInManager.SignInAsync(user, false);
+                    return RedirectToAction(nameof(GetDualAuthCode), new { user = user });
+                }
+                //todo: finish and sync and stuff
+
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult GetDualAuthCode(UserInfo user = null) {
+            const string AuthenticatorUriFormat = "otpauth://totp/{0} ({1})?secret={2}&issuer={0}&digits=6";
+            ViewData["dualAuthKey"] = HttpUtility.UrlEncode(System.String.Format(AuthenticatorUriFormat, "BlockMart", user.UserName, user.DualAuthenticationSecretKey));
+            return View();
+        }
+
+//todo: create views and test
     }
 
 }
-
-// The code is written out now. create the pages and test it all.....
 
 /*
 https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/consumer-apis/password-hashing?view=aspnetcore-5.0

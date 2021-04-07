@@ -20,6 +20,10 @@ namespace server.Models.Database {
         [ProtectedPersonalData]
         public string BlockchainAddress { get; set; }
 
+        [Required]
+        [ProtectedPersonalData]
+        public string PrivateKey { get; set; }
+
         [EmailAddress]
         [ProtectedPersonalData]
         public override string Email { get; set; }
