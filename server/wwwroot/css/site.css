@@ -82,6 +82,10 @@ body {
         filter: invert(1) hue-rotate(180deg);
     }
 
+    img {
+        filter: invert(1) hue-rotate(180deg);
+    }
+
     @-moz-document url-prefix() {
         html {
             background: black;
