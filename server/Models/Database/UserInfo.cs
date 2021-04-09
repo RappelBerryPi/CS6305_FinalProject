@@ -37,6 +37,9 @@ namespace server.Models.Database {
         [StringLength(16,MinimumLength = 16)]
         public string DualAuthenticationSecretKey {get; set;}
 
+        [Required]
+        public bool isSupplier { get; set; }
+
         public const string USER_NAME_REGEX = "^[A-Za-z][A-Za-z0-9_]{7,59}$";
 
     }

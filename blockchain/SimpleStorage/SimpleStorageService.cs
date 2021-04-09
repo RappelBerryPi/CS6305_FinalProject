@@ -53,32 +53,6 @@ namespace Blockchain.Contracts.SimpleStorage
             return ContractHandler.QueryAsync<GetFunction, BigInteger>(null, blockParameter);
         }
 
-        public Task<string> PostRequestAsync(PostFunction postFunction)
-        {
-             return ContractHandler.SendRequestAsync(postFunction);
-        }
-
-        public Task<TransactionReceipt> PostRequestAndWaitForReceiptAsync(PostFunction postFunction, CancellationTokenSource cancellationToken = null)
-        {
-             return ContractHandler.SendRequestAndWaitForReceiptAsync(postFunction, cancellationToken);
-        }
-
-        public Task<string> PostRequestAsync(BigInteger x)
-        {
-            var postFunction = new PostFunction();
-                postFunction.X = x;
-            
-             return ContractHandler.SendRequestAsync(postFunction);
-        }
-
-        public Task<TransactionReceipt> PostRequestAndWaitForReceiptAsync(BigInteger x, CancellationTokenSource cancellationToken = null)
-        {
-            var postFunction = new PostFunction();
-                postFunction.X = x;
-            
-             return ContractHandler.SendRequestAndWaitForReceiptAsync(postFunction, cancellationToken);
-        }
-
         public Task<string> SetRequestAsync(SetFunction setFunction)
         {
              return ContractHandler.SendRequestAsync(setFunction);

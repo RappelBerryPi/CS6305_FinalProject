@@ -33,6 +33,8 @@ namespace server.Controllers {
             var intvalue = await service.GetQueryAsync();
             /* the below two lines do the same thing */
             var Hellos = this.context.Hellos.OrderBy(H => H.Id).ToList();
+
+
             this.ViewData.Add("Hellos", Hellos);
             this.ViewData.Add("intValue", (System.Nullable<BigInteger>) intvalue);
             return View();

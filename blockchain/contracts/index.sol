@@ -1,9 +1,8 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.4.22 <0.8.0;
+pragma solidity >=0.4.22;
 
 contract SimpleStorage {
     uint storedData;
-    uint s;
 
     function set(uint x) public {
         storedData = x;
@@ -13,7 +12,4 @@ contract SimpleStorage {
         return storedData;
     }
 
-    function post(uint x) public {
-        s = x;
-    }
 }
