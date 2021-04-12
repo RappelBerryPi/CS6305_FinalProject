@@ -12,7 +12,7 @@ namespace server.Services.Validation.Attributes {
             var passwordMinLength = 8;
             var passwordMaxLength = 30;
             if (password.Length < passwordMinLength || password.Length > passwordMaxLength)  {
-                return new ValidationResult($"Your password must be at least {passwordMinLength}, and no more than ${passwordMaxLength} characters.");
+                return new ValidationResult($"Your password must be at least {passwordMinLength}, and no more than {passwordMaxLength} characters.");
             }
 
             // password must have at least 1 upper case character.

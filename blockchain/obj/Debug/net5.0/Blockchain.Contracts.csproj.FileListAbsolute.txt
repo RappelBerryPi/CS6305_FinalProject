@@ -10,3 +10,15 @@
 /media/ryan/Workspace/Projects/CS6305_FinalProject/blockchain/obj/Debug/net5.0/Blockchain.Contracts.dll
 /media/ryan/Workspace/Projects/CS6305_FinalProject/blockchain/obj/Debug/net5.0/ref/Blockchain.Contracts.dll
 /media/ryan/Workspace/Projects/CS6305_FinalProject/blockchain/obj/Debug/net5.0/Blockchain.Contracts.pdb
+D:\Projects\CS6305_FinalProject\blockchain\bin\Debug\net5.0\Blockchain.Contracts.deps.json
+D:\Projects\CS6305_FinalProject\blockchain\bin\Debug\net5.0\Blockchain.Contracts.dll
+D:\Projects\CS6305_FinalProject\blockchain\bin\Debug\net5.0\ref\Blockchain.Contracts.dll
+D:\Projects\CS6305_FinalProject\blockchain\bin\Debug\net5.0\Blockchain.Contracts.pdb
+D:\Projects\CS6305_FinalProject\blockchain\obj\Debug\net5.0\Blockchain.Contracts.csprojAssemblyReference.cache
+D:\Projects\CS6305_FinalProject\blockchain\obj\Debug\net5.0\Blockchain.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\CS6305_FinalProject\blockchain\obj\Debug\net5.0\Blockchain.Contracts.AssemblyInfoInputs.cache
+D:\Projects\CS6305_FinalProject\blockchain\obj\Debug\net5.0\Blockchain.Contracts.AssemblyInfo.cs
+D:\Projects\CS6305_FinalProject\blockchain\obj\Debug\net5.0\Blockchain.Contracts.csproj.CoreCompileInputs.cache
+D:\Projects\CS6305_FinalProject\blockchain\obj\Debug\net5.0\Blockchain.Contracts.dll
+D:\Projects\CS6305_FinalProject\blockchain\obj\Debug\net5.0\ref\Blockchain.Contracts.dll
+D:\Projects\CS6305_FinalProject\blockchain\obj\Debug\net5.0\Blockchain.Contracts.pdb

@@ -139,6 +139,12 @@ namespace server.Controllers {
             return View();
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Logout(UserInfo user) {
+            await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
+            return RedirectToAction("Index", "Home");
+        }
+
 //todo: create views and test
     }
 

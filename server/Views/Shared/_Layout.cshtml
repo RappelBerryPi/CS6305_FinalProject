@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,14 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Solway:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    @RenderSection("head", false)
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 fixed-top">
-            <div class="container">
-                <a class="navbar-brand block-text" asp-area="" asp-controller="Home" asp-action="Index" >BlockMart</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+            <div class="container-fluid">
+                <a class="navbar-brand block-text" asp-area="" asp-controller="Home" asp-action="Index">BlockMart</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
@@ -26,6 +29,53 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Shop" asp-action="Index">Shop</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        @if (User?.Identity?.IsAuthenticated ?? false)
+
+
+
+                        {
+                            <li class="nav-item navbar-text">
+                                @User.Identity.Name
+                            </li>
+                            <li class="nav-item">
+                                <button type="button" class="btn btn-danger">
+                                    <a class="nav-link text-light" asp-area="" asp-controller="User" asp-action="Logout">Logout</a>
+                                </button>
+                            </li>
+
+
+
+
+
+
+
+                        }
+
+
+
+                        else
+
+
+
+                        {
+                            <li class="nav-item">
+                                <button type="button" class="btn btn-success">
+                                    <a class="nav-link text-light" asp-area="" asp-controller="User" asp-action="Login">Login</a>
+                                </button>
+                            </li>
+
+
+
+
+
+
+
+                        }
                     </ul>
                 </div>
             </div>
@@ -33,6 +83,30 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
+            @if (!Html?.ViewData?.ModelState?.IsValid ?? false)
+            {
+                <div id="error-modal" class="modal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Errors in submission</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                @Html.ValidationSummary(false, "", new {@class = "text-danger"})
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            }
             @RenderBody()
         </main>
     </div>
@@ -46,5 +120,15 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+    @if (!Html?.ViewData?.ModelState?.IsValid ?? false)
+    {
+        <script>
+            $(function () {
+                $("#error-modal").modal('show');
+            });
+        </script>
+
+    }
 </body>
+
 </html>

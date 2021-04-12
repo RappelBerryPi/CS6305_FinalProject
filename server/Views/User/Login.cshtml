@@ -1,0 +1,49 @@
+@model server.Models.Validation.LoginUserForm
+@{
+    string returnUrl = (string)ViewData["ReturnUrl"];
+}
+
+@section head {
+<style>
+    .centered {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 50%;
+        min-height: 33vh;
+        box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+            0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+            0 12.5px 10px rgba(0, 0, 0, 0.06),
+            0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+            0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+            0 100px 80px rgba(0, 0, 0, 0.12),
+            0 -2.8px 2.2px rgba(0,0,0, 0.086)
+    }
+</style>
+}
+
+<div class="centered rounded text-center">
+    <section class="row">
+        <div class="col">
+            <h1>Sign In</h1>
+        </div>
+    </section>
+    <section class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            @using (Html.BeginForm())
+            {
+                <div class="form-group">
+                    @Html.LabelFor(m => m.UserName)
+                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @PlaceHolder = "User Name"})
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password)
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", @PlaceHolder = "Password"})
+                </div>
+                <input type="submit" class="btn btn-primary">
+            }
+        </div>
+    </section>
+</div>

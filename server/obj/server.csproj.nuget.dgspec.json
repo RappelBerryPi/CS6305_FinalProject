@@ -1,28 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "/media/ryan/Workspace/Projects/CS6305_FinalProject/server/server.csproj": {}
+    "D:\\Projects\\CS6305_FinalProject\\server\\server.csproj": {}
   },
   "projects": {
-    "/media/ryan/Workspace/Projects/CS6305_FinalProject/blockchain/Blockchain.Contracts.csproj": {
+    "D:\\Projects\\CS6305_FinalProject\\blockchain\\Blockchain.Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/media/ryan/Workspace/Projects/CS6305_FinalProject/blockchain/Blockchain.Contracts.csproj",
+        "projectUniqueName": "D:\\Projects\\CS6305_FinalProject\\blockchain\\Blockchain.Contracts.csproj",
         "projectName": "Blockchain.Contracts",
-        "projectPath": "/media/ryan/Workspace/Projects/CS6305_FinalProject/blockchain/Blockchain.Contracts.csproj",
-        "packagesPath": "/home/ryan/.nuget/packages/",
-        "outputPath": "/media/ryan/Workspace/Projects/CS6305_FinalProject/blockchain/obj/",
+        "projectPath": "D:\\Projects\\CS6305_FinalProject\\blockchain\\Blockchain.Contracts.csproj",
+        "packagesPath": "C:\\Users\\leppa\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\CS6305_FinalProject\\blockchain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/home/ryan/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\leppa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -61,37 +63,39 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/media/ryan/Workspace/Projects/CS6305_FinalProject/server/server.csproj": {
+    "D:\\Projects\\CS6305_FinalProject\\server\\server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/media/ryan/Workspace/Projects/CS6305_FinalProject/server/server.csproj",
+        "projectUniqueName": "D:\\Projects\\CS6305_FinalProject\\server\\server.csproj",
         "projectName": "server",
-        "projectPath": "/media/ryan/Workspace/Projects/CS6305_FinalProject/server/server.csproj",
-        "packagesPath": "/home/ryan/.nuget/packages/",
-        "outputPath": "/media/ryan/Workspace/Projects/CS6305_FinalProject/server/obj/",
+        "projectPath": "D:\\Projects\\CS6305_FinalProject\\server\\server.csproj",
+        "packagesPath": "C:\\Users\\leppa\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\CS6305_FinalProject\\server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/home/ryan/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\leppa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/media/ryan/Workspace/Projects/CS6305_FinalProject/blockchain/Blockchain.Contracts.csproj": {
-                "projectPath": "/media/ryan/Workspace/Projects/CS6305_FinalProject/blockchain/Blockchain.Contracts.csproj"
+              "D:\\Projects\\CS6305_FinalProject\\blockchain\\Blockchain.Contracts.csproj": {
+                "projectPath": "D:\\Projects\\CS6305_FinalProject\\blockchain\\Blockchain.Contracts.csproj"
               }
             }
           }
@@ -163,7 +167,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
         }
       }
     }
