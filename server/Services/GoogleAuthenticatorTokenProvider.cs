@@ -13,10 +13,9 @@ namespace server.Services {
         }
 
         public Task<string> GenerateAsync(string purpose, UserManager<UserInfo> manager, UserInfo user) {
-            var key = KeyGeneration.GenerateRandomKey(16);
+            var key = KeyGeneration.GenerateRandomKey(10);
             var base32String = Base32Encoding.ToString(key);
             user.DualAuthenticationSecretKey = base32String;
-            manager.SetTwoFactorEnabledAsync(user, true);
             return Task.FromResult(base32String);
         }
 

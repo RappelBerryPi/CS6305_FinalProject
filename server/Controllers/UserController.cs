@@ -17,10 +17,13 @@ namespace server.Controllers {
         private readonly SignInManager<UserInfo> signInManager;
         private readonly ILogger logger;
 
-        public UserController(UserManager<UserInfo> userManager, SignInManager<UserInfo> signInManager, ILogger<UserController> logger) {
+        private readonly DefaultContext context;
+
+        public UserController(UserManager<UserInfo> userManager, SignInManager<UserInfo> signInManager, ILogger<UserController> logger, DefaultContext context) {
             this.userManager = userManager;
             this.signInManager = signInManager;
             this.logger = logger;
+            this.context = context;
         }
 
         [HttpGet]
@@ -75,9 +78,9 @@ namespace server.Controllers {
                 throw new ApplicationException("unable to load user");
             }
 
-            string authenticatorcode = ""; //model.GetHashCode.Accepted......
-            var result = await this.signInManager.TwoFactorAuthenticatorSignInAsync(authenticatorcode, false, false);
-            if (result.Succeeded) {
+            var result = await this.userManager.VerifyTwoFactorTokenAsync(user, "GoogleAuthenticator", model.DualAuthCode);
+            if (result) {
+                await this.signInManager.SignInAsync(user, false);
                 if (Url.IsLocalUrl(returnUrl)) {
                     return Redirect(returnUrl);
                 } else {
@@ -116,32 +119,33 @@ namespace server.Controllers {
                 user.TwoFactorEnabled = true;
                 user.BlockchainAddress = account.Address;
                 user.PrivateKey = account.PrivateKey;
+                user.EmailConfirmed = true;
 
-                var result = await this.userManager.CreateAsync(user, newUserForm.Password);
+                var result = await userManager.CreateAsync(user, newUserForm.Password);
                 if (result.Succeeded) {
-                    var result2 = this.userManager.GenerateTwoFactorTokenAsync(user, "GoogleAuthenticator");
-                    if (result2.IsCompletedSuccessfully) {
-                        user.DualAuthenticationSecretKey = result2.Result;
-                    }
                     await this.signInManager.SignInAsync(user, false);
-                    return RedirectToAction(nameof(GetDualAuthCode), new { user = user });
+                    return RedirectToAction(nameof(GetDualAuthCode), user); 
                 }
                 //todo: finish and sync and stuff
 
             }
-            return View();
+            return View(newUserForm);
         }
 
         [HttpGet]
-        public IActionResult GetDualAuthCode(UserInfo user = null) {
+        public async Task<IActionResult> GetDualAuthCode(UserInfo user = null) {
+            //TODO: get authenticated user instead.... tododo
+            await userManager.GenerateTwoFactorTokenAsync(user, "GoogleAuthenticator");
+            this.context.Update(user);
+            this.context.SaveChanges();
             const string AuthenticatorUriFormat = "otpauth://totp/{0} ({1})?secret={2}&issuer={0}&digits=6";
-            ViewData["dualAuthKey"] = HttpUtility.UrlEncode(System.String.Format(AuthenticatorUriFormat, "BlockMart", user.UserName, user.DualAuthenticationSecretKey));
+            ViewData["dualAuthKey"] = System.String.Format(AuthenticatorUriFormat, "BlockMart", user.UserName, user.DualAuthenticationSecretKey);
             return View();
         }
 
         [HttpGet]
         public async Task<IActionResult> Logout(UserInfo user) {
-            await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
+            await this.signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
 

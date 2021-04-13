@@ -1,0 +1,42 @@
+@{
+    string dualAuthKey = (string) ViewData["dualAuthKey"];
+}
+
+<div class="centered rounded text-center">
+    <section class="row">
+        <div class="col">
+            <h1>Please use the Below QRCode for dual authentication</h1>
+        </div>
+    </section>
+    <section class="row">
+        <div class="col">
+            <div id="qrcode">
+            </div>
+        </div>
+    </section>
+</div>
+
+@section head {
+    <style>
+        div#qrcode > img {
+            margin: auto;
+        }
+    </style>
+
+}
+
+@section Scripts {
+    <script src="~/js/qrcode.js/qrcode.min.js"></script>
+    <script>
+        $(function() {
+            var qrcode = new QRCode(document.getElementById("qrcode"), {
+                text: "@dualAuthKey",
+                width: 128,
+                height: 128,
+                colorDark: "#000000",
+                colorLight: "#FFFFFF",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+        });
+    </script>
+}

@@ -1,0 +1,25 @@
+@model server.Models.Validation.LoginWith2faViewModel
+@{
+    string returnUrl = (string)ViewData["ReturnUrl"];
+}
+
+<div class="centered rounded text-center">
+    <section class="row">
+        <div class="col">
+            <h1>Enter your Authentication Code</h1>
+        </div>
+    </section>
+    <section class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            @using (Html.BeginForm())
+            {
+                <div class="form-group">
+                    @Html.LabelFor(m => m.DualAuthCode)
+                    @Html.TextBoxFor(m => m.DualAuthCode, new { @class = "form-control", @PlaceHolder = "000000"})
+                </div>
+                <input type="submit" class="btn btn-primary">
+            }
+        </div>
+    </section>
+</div>

@@ -9,12 +9,5 @@ namespace server.Models.Validation {
         [StrongPassword]
         [Required]
         public string Password { get; set; }
-
-/*
-        [Required]
-        [StringLength(6, MinimumLength = 6)]
-        [RegularExpression("^[0-9]{6}$")]
-        public string DualAuthCode {get; set; }
-        */
     }
 }

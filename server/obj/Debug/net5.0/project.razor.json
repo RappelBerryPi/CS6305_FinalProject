@@ -15629,13 +15629,28 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\Projects\\CS6305_FinalProject\\server\\Views\\User\\CreateNewUser.cshtml",
+      "TargetPath": "Views\\User\\CreateNewUser.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\Projects\\CS6305_FinalProject\\server\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\Projects\\CS6305_FinalProject\\server\\Views\\User\\GetDualAuthCode.cshtml",
+      "TargetPath": "Views\\User\\GetDualAuthCode.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\Projects\\CS6305_FinalProject\\server\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Projects\\CS6305_FinalProject\\server\\Views\\User\\LoginWith2fa.cshtml",
+      "TargetPath": "Views\\User\\LoginWith2fa.cshtml",
       "FileKind": "mvc"
     },
     {

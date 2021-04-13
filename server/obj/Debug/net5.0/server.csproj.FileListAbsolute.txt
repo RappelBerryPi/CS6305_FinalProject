@@ -1228,3 +1228,6 @@ D:\Projects\CS6305_FinalProject\server\obj\Debug\net5.0\ref\server.dll
 D:\Projects\CS6305_FinalProject\server\obj\Debug\net5.0\server.pdb
 D:\Projects\CS6305_FinalProject\server\obj\Debug\net5.0\server.genruntimeconfig.cache
 D:\Projects\CS6305_FinalProject\server\obj\Debug\net5.0\Razor\Views\User\Login.cshtml.g.cs
+D:\Projects\CS6305_FinalProject\server\obj\Debug\net5.0\Razor\Views\User\CreateNewUser.cshtml.g.cs
+D:\Projects\CS6305_FinalProject\server\obj\Debug\net5.0\Razor\Views\User\GetDualAuthCode.cshtml.g.cs
+D:\Projects\CS6305_FinalProject\server\obj\Debug\net5.0\Razor\Views\User\LoginWith2fa.cshtml.g.cs

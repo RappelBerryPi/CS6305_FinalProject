@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Numerics;
 using System.Threading.Tasks;
@@ -21,6 +22,7 @@ namespace server.Controllers {
 
         public async Task<IActionResult> Index() {
             var account = new Nethereum.Web3.Accounts.Account("0x2b660bdec9aa543b8786e6ab0ec16c2947a4c8f443493fdf344f9660e4c23311");
+            /*
             var web3 = new Nethereum.Web3.Web3(account, "http://127.0.0.1:8545/");
             //var deployment = new SimpleStorageDeployment();
             //deployment.GasPrice = 0;
@@ -32,6 +34,7 @@ namespace server.Controllers {
             //var receiptForSetFunctionCall = await service.SetRequestAndWaitForReceiptAsync(new SetFunction() { X = 42, GasPrice = 0});
             var intvalue = await service.GetQueryAsync();
             /* the below two lines do the same thing */
+            var intvalue = new Random().Next();
             var Hellos = this.context.Hellos.OrderBy(H => H.Id).ToList();
 
 

@@ -1,4 +1,4 @@
-@model server.Models.Validation.LoginUserForm
+@model server.Models.Validation.NewUserForm
 @{
     string returnUrl = (string)ViewData["ReturnUrl"];
 }
@@ -6,7 +6,7 @@
 <div class="centered rounded text-center">
     <section class="row">
         <div class="col">
-            <h1>Sign In</h1>
+            <h1>Create a New User</h1>
         </div>
     </section>
     <section class="row">
@@ -14,6 +14,18 @@
         <div class="col-6">
             @using (Html.BeginForm())
             {
+                <div class="form-group">
+                    @Html.LabelFor(m => m.EmailAddress)
+                    @Html.TextBoxFor(m => m.EmailAddress, new { @class = "form-control", @PlaceHolder = "Email Address"})
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.FirstName)
+                    @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", @PlaceHolder = "First Name"})
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.LastName)
+                    @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", @PlaceHolder = "Last Name"})
+                </div>
                 <div class="form-group">
                     @Html.LabelFor(m => m.UserName)
                     @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @PlaceHolder = "User Name"})
@@ -23,10 +35,8 @@
                     @Html.PasswordFor(m => m.Password, new { @class = "form-control", @PlaceHolder = "Password"})
                 </div>
                 <input type="submit" class="btn btn-primary">
-                <button type="button" class="btn btn-success">
-                    <a class="text-light" asp-area="" asp-controller="User" asp-action="CreateNewUser">Create User</a>
-                </button>
             }
+        <br />
         </div>
     </section>
 </div>
