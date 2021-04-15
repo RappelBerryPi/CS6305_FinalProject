@@ -8,6 +8,7 @@ namespace server.Models.Database {
         public DefaultContext(DbContextOptions<DefaultContext> options) : base(options) { }
 
         public DbSet<Hello> Hellos { get; set; }
+        public DbSet<ShopItem> ShopItems { get; set; }
     }
 
 }

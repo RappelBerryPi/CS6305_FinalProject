@@ -15624,6 +15624,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\Projects\\CS6305_FinalProject\\server\\Views\\Shop\\Index.cshtml",
+      "TargetPath": "Views\\Shop\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\Projects\\CS6305_FinalProject\\server\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
@@ -15646,6 +15651,11 @@
     {
       "FilePath": "d:\\Projects\\CS6305_FinalProject\\server\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Projects\\CS6305_FinalProject\\server\\Views\\Shop\\View.cshtml",
+      "TargetPath": "Views\\Shop\\View.cshtml",
       "FileKind": "mvc"
     },
     {

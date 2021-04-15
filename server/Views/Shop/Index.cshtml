@@ -1,0 +1,47 @@
+@{
+    ViewData["Title"] = "Shop";
+    ViewData["bodyClass"] = "container-fluid";
+    var ShopItems = ViewData["ShopItems"] as List<server.Models.Database.ShopItem>;
+}
+
+<section class="row">
+    <div class="col text-center">
+        <h1>Shop with us!</p>
+    </div>
+</section>
+
+@if (ShopItems.Count == 0)
+{
+    <section class="row">
+        <div class="col text-center">
+            <h1>There are no items! :(</h1>
+        </div>
+    </section>
+}
+else
+{
+    for (int i = 0; i < ShopItems.Count; i++)
+    {
+        var item = ShopItems[i];
+        if (i % 2 == 0)
+        {
+            @Html.Raw("<section class=\"row\">")
+        }
+                <div class="col-4">
+                    <div class="card">
+                        <img class="card-img-top" src="@item.PictureUrl" alt="@item.ImgAltText">
+                        <div class="card-body">
+                            <span class="badge badge-pill badge-info" style="float:right">
+                              @item.Cost.ToString("C",System.Globalization.CultureInfo.CurrentCulture)
+                            </span>
+                            <h5 class="card-title">@item.Title</h5>
+                            <p class="card-text">@item.shortDescription</p>
+                            <a asp-controller="Shop" asp-action="View" asp-route-id="@item.Id" class="btn btn-primary">View</a>
+                        </div>
+                    </div>
+                </div>
+        if (i % 2 == 0) {
+            @Html.Raw("</section>")
+        }
+    }
+}

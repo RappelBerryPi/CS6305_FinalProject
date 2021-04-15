@@ -1,5 +1,6 @@
 @model server.Models.Validation.LoginWith2faViewModel
 @{
+    ViewData["Title"] = "Dual Authentication";
     string returnUrl = (string)ViewData["ReturnUrl"];
 }
 
@@ -17,9 +18,14 @@
                 <div class="form-group">
                     @Html.LabelFor(m => m.DualAuthCode)
                     @Html.TextBoxFor(m => m.DualAuthCode, new { @class = "form-control", @PlaceHolder = "000000"})
+                    @Html.ValidationMessageFor(m => m.DualAuthCode)
                 </div>
                 <input type="submit" class="btn btn-primary">
             }
         </div>
     </section>
 </div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

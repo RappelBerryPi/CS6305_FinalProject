@@ -1,5 +1,7 @@
 @model server.Models.Validation.NewUserForm
 @{
+
+    ViewData["Title"] = "New User";
     string returnUrl = (string)ViewData["ReturnUrl"];
 }
 
@@ -17,22 +19,27 @@
                 <div class="form-group">
                     @Html.LabelFor(m => m.EmailAddress)
                     @Html.TextBoxFor(m => m.EmailAddress, new { @class = "form-control", @PlaceHolder = "Email Address"})
+                    @Html.ValidationMessageFor(m => m.EmailAddress)
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(m => m.FirstName)
                     @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", @PlaceHolder = "First Name"})
+                    @Html.ValidationMessageFor(m => m.FirstName)
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(m => m.LastName)
                     @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", @PlaceHolder = "Last Name"})
+                    @Html.ValidationMessageFor(m => m.LastName)
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(m => m.UserName)
                     @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @PlaceHolder = "User Name"})
+                    @Html.ValidationMessageFor(m => m.UserName)
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(m => m.Password)
                     @Html.PasswordFor(m => m.Password, new { @class = "form-control", @PlaceHolder = "Password"})
+                    @Html.ValidationMessageFor(m => m.Password)
                 </div>
                 <input type="submit" class="btn btn-primary">
             }
@@ -40,3 +47,7 @@
         </div>
     </section>
 </div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

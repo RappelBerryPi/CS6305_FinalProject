@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - BlockMart </title>
+    <title>@ViewData["Title"] - BlokMart </title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Solway:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
@@ -16,7 +16,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand block-text" asp-area="" asp-controller="Home" asp-action="Index">BlockMart</a>
+                <a class="navbar-brand block-text" asp-area="" asp-controller="Home" asp-action="Index">BlokMart</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -53,7 +53,11 @@
             </div>
         </nav>
     </header>
-    <div class="container">
+    @if (ViewData["bodyClass"] == null) {
+        @Html.Raw("<div class=\"container\">")
+    } else {
+        @Html.Raw("<div class=\"" + ViewData["bodyClass"] + "\">")
+    }
         <main role="main" class="pb-3">
             @if (!Html?.ViewData?.ModelState?.IsValid ?? false)
             {
@@ -79,7 +83,7 @@
             }
             @RenderBody()
         </main>
-    </div>
+    @Html.Raw("</div>")
 
     <footer class="border-top footer text-muted text-center">
         <div class="container">

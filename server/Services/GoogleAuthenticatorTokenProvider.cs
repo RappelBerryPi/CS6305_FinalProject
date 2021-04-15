@@ -13,10 +13,12 @@ namespace server.Services {
         }
 
         public Task<string> GenerateAsync(string purpose, UserManager<UserInfo> manager, UserInfo user) {
-            var key = KeyGeneration.GenerateRandomKey(10);
-            var base32String = Base32Encoding.ToString(key);
-            user.DualAuthenticationSecretKey = base32String;
-            return Task.FromResult(base32String);
+            if (string.IsNullOrEmpty(user.DualAuthenticationSecretKey)) {
+                var key = KeyGeneration.GenerateRandomKey(10);
+                var base32String = Base32Encoding.ToString(key);
+                user.DualAuthenticationSecretKey = base32String;
+            }
+            return Task.FromResult(user.DualAuthenticationSecretKey);
         }
 
         public Task<bool> ValidateAsync(string purpose, string token, UserManager<UserInfo> manager, UserInfo user) {

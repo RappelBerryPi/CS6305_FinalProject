@@ -9,6 +9,9 @@ namespace server.Services.Validation.Attributes {
             string password = (string) value;
 
             // password must be between 8 and 30 characters.
+            if (password == null) {
+                return new ValidationResult("Your password cannot be empty and is required");
+            }
             var passwordMinLength = 8;
             var passwordMaxLength = 30;
             if (password.Length < passwordMinLength || password.Length > passwordMaxLength)  {

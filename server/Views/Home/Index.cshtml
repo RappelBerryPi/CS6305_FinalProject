@@ -1,13 +1,16 @@
 ﻿@model server.Models.Database.Hello
 @{
+
     ViewData["Title"] = "Home Page";
+
     var Hellos = ViewData["Hellos"] as List<server.Models.Database.Hello>;
+
     var intvalue = ViewData["intValue"] as System.Nullable<System.Numerics.BigInteger>;
 }
 
 <div class="text-center">
     <div class="jumbotron">
-        <h1 class="display-4">Welcome to <span class="block-text">BlockMart</span></h1>
+        <h1 class="display-4">Welcome to <span class="block-text">BlokMart</span></h1>
         <div class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -25,17 +28,99 @@
             </div>
         </div>
     </div>
-    <section>
-        Who are we?
-    </section>
-    <section>
-        what do we do?
-    </section>
-    <section>
-        why blockchain?
-    </section>
-    <section>
-        what's the cost?
+    <section class="row">
+        <div id="accordion" style="width: 100%">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0"><button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                            aria-expanded="true" aria-controls="collapseOne">
+                            Who are we?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labeledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        We are BlokMart. We are committed to your data integrity. We want to make sure that you have the most up
+                        to date
+                        resources for data management and the knowledge that your data is maintained not only through traditional
+                        means
+                        but with the backing technology of cryptocurrency itself: BlockChain. This Technology isn't just for the
+                        tech
+                        savvy and ensures that your data is safe, secure, verifyable, and unrefutible.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                            aria-expanded="false" aria-controls="collapseTwo">
+                            What do we do?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labeledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body">
+                        We offer the most secure data integrity of any system to date. We ensure that not only is your data secure
+                        and
+                        backed up using typical means but in addition we use blockchain technology to maintain the system of
+                        record for
+                        user creation and transactions. We also offer the ability to view the entire history of items including
+                        the
+                        creation of parts of mechanical items, the temperature of your milk from producer to store, and any other
+                        history
+                        that our partners are willing to share with us!
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+                            aria-expanded="false" aria-controls="collapseThree">
+                            Why blockchain?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labeledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                        You may have heard of blockchain when we talk about CryptoCurrency such as Ethereum. The good news about
+                        Blockchain
+                        is that its uses aren't limited to just cryptocurrency and the integrity model it offers is perfect for
+                        ensuring
+                        the validity of transactions either through purchases or through the creation or addition of data. The
+                        blockchain
+                        is a technology that allows blocks to be added onto the blockchain, verified and distributed through a
+                        distributed
+                        ledger technology, and then entirely irrefutable and immutable, ensureing that whatever data that was
+                        there
+                        originally, will be there for years down the road.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="headingFour">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour"
+                            aria-expanded="false" aria-controls="collapseFour">
+                            What's the cost?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labeledby="headingFour" data-parent="#accordion">
+                    <div class="card-body">
+                        Validating blockchain blocks takes quite a bit of processing power due to the calculations that are
+                        necessary to generate the proper keys. Because of the inherient increase of processing power needed as
+                        well as the cost of electricity we add on a small fee to every purchase (already pre calculated) to make
+                        sure that we can can compensate for these necessary out of pocket expenses. This ends up just being a few
+                        extra dollars on every purchase as compared to other vendors.
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <table class="table">
         <tr>
@@ -44,21 +129,29 @@
             <th> Id </th>
         </tr>
         @foreach (var hello in Hellos)
+
         {
             <tr>
                 <td> @hello.Header </td>
                 <td> @hello.Message </td>
                 <td> @hello.Id </td>
             </tr>
+
         }
     </table>
     <p>
         @intvalue.Value.ToString()
     </p>
     @using (Html.BeginForm())
+
     {
         @Html.EditorFor(m => m.Header)
         @Html.EditorFor(m => m.Message)
         <input type="submit">
+
     }
 </div>
+
+@section Scripts {
+@{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

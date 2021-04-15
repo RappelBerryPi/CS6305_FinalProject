@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using server.Models.Database;
 
 namespace server.Migrations
 {
     [DbContext(typeof(DefaultContext))]
-    partial class DefaultContextModelSnapshot : ModelSnapshot
+    [Migration("20210415045717_leppaWednesday_April_14_2021_11_57_07_PMadding_shop_items")]
+    partial class leppaWednesday_April_14_2021_11_57_07_PMadding_shop_items
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

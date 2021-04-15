@@ -1,4 +1,5 @@
 @{
+    ViewData["Title"] = "Generate Dual Authentication Key";
     string dualAuthKey = (string) ViewData["dualAuthKey"];
 }
 
@@ -39,4 +40,5 @@
             });
         });
     </script>
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

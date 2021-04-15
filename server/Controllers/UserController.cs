@@ -124,17 +124,15 @@ namespace server.Controllers {
                 var result = await userManager.CreateAsync(user, newUserForm.Password);
                 if (result.Succeeded) {
                     await this.signInManager.SignInAsync(user, false);
-                    return RedirectToAction(nameof(GetDualAuthCode), user); 
+                    return RedirectToAction(nameof(GetDualAuthCode), returnUrl); 
                 }
-                //todo: finish and sync and stuff
-
             }
             return View(newUserForm);
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetDualAuthCode(UserInfo user = null) {
-            //TODO: get authenticated user instead.... tododo
+        public async Task<IActionResult> GetDualAuthCode(string ReturnUrl) {
+            UserInfo user = userManager.GetUserAsync(this.User).GetAwaiter().GetResult();
             await userManager.GenerateTwoFactorTokenAsync(user, "GoogleAuthenticator");
             this.context.Update(user);
             this.context.SaveChanges();
@@ -148,25 +146,6 @@ namespace server.Controllers {
             await this.signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
-
-//todo: create views and test
     }
 
 }
-
-/*
-https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/consumer-apis/password-hashing?view=aspnetcore-5.0
-https://github.com/dotnet/aspnetcore/blob/main/src/Identity/Extensions.Stores/src/IdentityUser.cs
-https://www.google.com/search?channel=fs&client=ubuntu&q=csharp+virtual
-https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations?view=net-5.0
-https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-5.0&tabs=linux
-https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity-enable-qrcodes?view=aspnetcore-5.0
-https://docs.microsoft.com/en-us/aspnet/mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication
-https://docs.microsoft.com/en-us/aspnet/mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset
-https://docs.microsoft.com/en-us/aspnet/mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication
-https://github.com/codebude/QRCoder/wiki/Advanced-usage---Payload-generators#311-one-time-password
-https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations.stringlengthattribute?view=net-5.0
-https://github.com/kspearrin/Otp.NET
-https://github.com/dotnet/AspNetCore.Docs/blob/main/aspnetcore/security/authentication/identity/sample/src/ASPNETCore-IdentityDemoComplete/IdentityDemo/Controllers/AccountController.cs
-
-*/

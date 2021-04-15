@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using server.Models.Database;
 
 namespace server.Controllers {
 
@@ -6,8 +8,13 @@ namespace server.Controllers {
     [ApiController]
     public class InfoController : Controller {
         [HttpGet("Get/{id}")]
-        public string Get(string id) {
-            return $"Hello {id}";
+        [Authorize]
+        public Hello Get(string id) {
+            var returnObj = new Hello();
+            returnObj.Id = 1;
+            returnObj.Header = "Hello";
+            returnObj.Message = id;
+            return returnObj;
         }
 
 

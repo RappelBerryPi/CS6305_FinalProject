@@ -1,0 +1,36 @@
+@model server.Models.Database.ShopItem
+@{
+    ViewData["Title"] = "View Item";
+}
+
+<section class="row">
+    <div class="col">
+        <div class="card">
+            <img class="card-img-top" src="@Model.PictureUrl" alt="@Model.ImgAltText">
+            <div class="card-body">
+                <h1><span class="badge badge-pill badge-primary" style="float:right">
+                    @Model.Cost.ToString("C",System.Globalization.CultureInfo.CurrentCulture)
+                </span>
+                </h1>
+                <h5 class="card-title">@Model.Title</h5>
+                <p class="card-text">@Model.shortDescription</p>
+            </div>
+            <div class="card-footer text-center">
+                <a class="btn btn-primary" style="min-width: 7rem" asp-controller="Shop" asp-action="Buy" asp-route-id="@Model.Id">Buy</a>
+                <a class="btn btn-danger" style="min-width: 7rem" asp-controller="Shop" asp-action="Index">Back</a>
+            </div>
+        </div>
+    </div>
+</section>
+<br />
+<section class="row">
+    <div class="col">
+        <p class="text-center">@Model.longDescription</p>
+    </div>
+</section>
+<br />
+<section class="row">
+    <div class="col">
+        <p class="text-center"> To view the known history of this item please click <a asp-controller="Shop" asp-action="History" asp-route-id="@Model.Id">here</a> </p>
+    </div>
+</section>
