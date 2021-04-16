@@ -1,10 +1,7 @@
 ﻿@model server.Models.Database.Hello
 @{
-
     ViewData["Title"] = "Home Page";
-
     var Hellos = ViewData["Hellos"] as List<server.Models.Database.Hello>;
-
     var intvalue = ViewData["intValue"] as System.Nullable<System.Numerics.BigInteger>;
 }
 
@@ -14,16 +11,16 @@
         <div class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="/images/main.gif" class="img-responsive">
+                    <img src="/images/main.gif" class="img-fluid">
                 </div>
                 <div class="carousel-item">
-                    <img src="/images/main2.gif" class="d-block w-100">
+                    <img src="/images/main2.gif" class="img-fluid">
                 </div>
                 <div class="carousel-item">
-                    <img src="/images/main3.gif" class="img-responsive">
+                    <img src="/images/main3.gif" class="img-fluid">
                 </div>
                 <div class="carousel-item">
-                    <img src="/images/main4.gif" class="d-block w-100">
+                    <img src="/images/main4.gif" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -32,9 +29,9 @@
         <div id="accordion" style="width: 100%">
             <div class="card">
                 <div class="card-header" id="headingOne">
-                    <h5 class="mb-0"><button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
-                            aria-expanded="true" aria-controls="collapseOne">
-                            Who are we?
+                    <h5 class="mb-0"><button class="btn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                            aria-controls="collapseOne">
+                            <b> Who are we? </b>
                         </button>
                     </h5>
                 </div>
@@ -54,9 +51,9 @@
             <div class="card">
                 <div class="card-header" id="headingTwo">
                     <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
-                            aria-expanded="false" aria-controls="collapseTwo">
-                            What do we do?
+                        <button class="btn collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                            aria-controls="collapseTwo">
+                            <b> What do we do </b>
                         </button>
                     </h5>
                 </div>
@@ -78,9 +75,9 @@
             <div class="card">
                 <div class="card-header" id="headingThree">
                     <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
-                            aria-expanded="false" aria-controls="collapseThree">
-                            Why blockchain?
+                        <button class="btn collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                            aria-controls="collapseThree">
+                            <b>Why blockchain? </b>
                         </button>
                     </h5>
                 </div>
@@ -104,9 +101,9 @@
             <div class="card">
                 <div class="card-header" id="headingFour">
                     <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour"
-                            aria-expanded="false" aria-controls="collapseFour">
-                            What's the cost?
+                        <button class="btn collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
+                            aria-controls="collapseFour">
+                            <b> What's the cost? </b>
                         </button>
                     </h5>
                 </div>
@@ -129,29 +126,46 @@
             <th> Id </th>
         </tr>
         @foreach (var hello in Hellos)
-
         {
             <tr>
                 <td> @hello.Header </td>
                 <td> @hello.Message </td>
                 <td> @hello.Id </td>
             </tr>
-
         }
     </table>
     <p>
         @intvalue.Value.ToString()
     </p>
     @using (Html.BeginForm())
-
     {
-        @Html.EditorFor(m => m.Header)
-        @Html.EditorFor(m => m.Message)
-        <input type="submit">
-
+        <section class="row">
+            <div class="col">
+                @Html.LabelFor(m => m.Header)
+                @Html.EditorFor(m => m.Header)
+            </div>
+            <div class="col">
+                @Html.LabelFor(m => m.Message)
+                @Html.EditorFor(m => m.Message)
+            </div>
+        </section>
+        <br />
+        <section class="row">
+            <div class="col">
+                <input type="submit">
+            </div>
+        </section>
     }
 </div>
 
 @section Scripts {
 @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+@section head {
+    <style>
+        div > div > img.d-block {
+            margin: 0 auto;
+        }
+    </style>
 }

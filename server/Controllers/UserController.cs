@@ -124,7 +124,12 @@ namespace server.Controllers {
                 var result = await userManager.CreateAsync(user, newUserForm.Password);
                 if (result.Succeeded) {
                     await this.signInManager.SignInAsync(user, false);
-                    return RedirectToAction(nameof(GetDualAuthCode), returnUrl); 
+                    return RedirectToAction(nameof(GetDualAuthCode), new {returnUrl}); 
+                } else {
+                    foreach (var failure in result.Errors) {
+                        ModelState.AddModelError(String.Empty, failure.Description);
+                    }
+                    return View(newUserForm);
                 }
             }
             return View(newUserForm);
@@ -138,6 +143,11 @@ namespace server.Controllers {
             this.context.SaveChanges();
             const string AuthenticatorUriFormat = "otpauth://totp/{0} ({1})?secret={2}&issuer={0}&digits=6";
             ViewData["dualAuthKey"] = System.String.Format(AuthenticatorUriFormat, "BlockMart", user.UserName, user.DualAuthenticationSecretKey);
+            if (Url.IsLocalUrl(ReturnUrl)) {
+                ViewData["ReturnUrl"] = ReturnUrl;
+            } else {
+                ViewData["ReturnUrl"] = "/";
+            }
             return View();
         }
 
