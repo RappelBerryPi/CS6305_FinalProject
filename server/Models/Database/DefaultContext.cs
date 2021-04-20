@@ -9,6 +9,7 @@ namespace server.Models.Database {
 
         public DbSet<Hello> Hellos { get; set; }
         public DbSet<ShopItem> ShopItems { get; set; }
+        public DbSet<ContractDeployment> ContractDeployments { get; set; }
     }
 
 }

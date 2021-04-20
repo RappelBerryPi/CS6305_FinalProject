@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using server.Models.Database;
+using server.Models.Settings;
 using server.Services;
 
 namespace server {
@@ -49,6 +50,8 @@ namespace server {
                 options.AccessDeniedPath = "/User/AccessDenied";
                 options.SlidingExpiration = true;
             });
+
+            services.Configure<EthereumServerSettings>(Configuration.GetSection(EthereumServerSettings.SectionName));
 
             IMvcBuilder builder = services.AddRazorPages();
             if (Env.IsDevelopment()) {
