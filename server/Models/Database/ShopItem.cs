@@ -22,6 +22,7 @@ namespace server.Models.Database {
         public UserInfo PurchasedBy { get; set; }
 
         public string BlockAddressOfPurchase { get; set; }
+        public string GUID { get; set; }
 
     }
     // HACK: maybe the purchased by and block address don't belong here?

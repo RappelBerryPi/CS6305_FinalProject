@@ -6,7 +6,7 @@
 <section class="row">
     <div class="col">
         <div class="card">
-            <img class="card-img-top" src="@Model.PictureUrl" alt="@Model.ImgAltText">
+            <img class="card-img-top" src="@(Model.PictureUrl ?? "/images/main.gif")" alt="@Model.ImgAltText">
             <div class="card-body">
                 <h1><span class="badge badge-pill badge-primary" style="float:right">
                     @Model.Cost.ToString("C",System.Globalization.CultureInfo.CurrentCulture)

@@ -15682,6 +15682,11 @@
       "FilePath": "d:\\Projects\\CS6305_FinalProject\\server\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Projects\\CS6305_FinalProject\\server\\Views\\Shop\\History.cshtml",
+      "TargetPath": "Views\\Shop\\History.cshtml",
+      "FileKind": "mvc"
     }
   ],
   "SerializationFormat": "0.2"

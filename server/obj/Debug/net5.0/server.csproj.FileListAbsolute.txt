@@ -1233,3 +1233,4 @@ D:\Projects\CS6305_FinalProject\server\obj\Debug\net5.0\Razor\Views\User\GetDual
 D:\Projects\CS6305_FinalProject\server\obj\Debug\net5.0\Razor\Views\User\LoginWith2fa.cshtml.g.cs
 D:\Projects\CS6305_FinalProject\server\obj\Debug\net5.0\Razor\Views\Shop\Index.cshtml.g.cs
 D:\Projects\CS6305_FinalProject\server\obj\Debug\net5.0\Razor\Views\Shop\View.cshtml.g.cs
+D:\Projects\CS6305_FinalProject\server\obj\Debug\net5.0\Razor\Views\Shop\History.cshtml.g.cs

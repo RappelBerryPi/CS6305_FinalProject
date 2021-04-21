@@ -20,16 +20,14 @@
 }
 else
 {
-    for (int i = 0; i < ShopItems.Count; i++)
+    for (int i = 0; i < ShopItems.Count; i += 3)
     {
-        var item = ShopItems[i];
-        if (i % 2 == 0)
-        {
-            @Html.Raw("<section class=\"row\">")
-        }
+        <section class="row">
+            @for (int j = i; j < (i + 3) && j < ShopItems.Count; j++) {
+                var item = ShopItems[j];
                 <div class="col-4">
                     <div class="card">
-                        <img class="card-img-top" src="@item.PictureUrl" alt="@item.ImgAltText">
+                        <img class="card-img-top" src="@(item.PictureUrl ?? "/images/main.gif")" alt="@item.ImgAltText">
                         <div class="card-body">
                             <span class="badge badge-pill badge-info" style="float:right">
                               @item.Cost.ToString("C",System.Globalization.CultureInfo.CurrentCulture)
@@ -40,8 +38,7 @@ else
                         </div>
                     </div>
                 </div>
-        if (i % 2 == 0) {
-            @Html.Raw("</section>")
-        }
+            }
+        </section>
     }
 }
