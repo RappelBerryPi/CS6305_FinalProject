@@ -88,6 +88,8 @@ namespace server.Services {
                 shortDescription = watchForm.ShortDescription,
                 Title = watchForm.WatchName
             };
+            var watchNumber = new Random().Next(1,5);
+            shopItem.PictureUrl = $"/images/watch{watchNumber}.jpg";
             this.context.ShopItems.Add(shopItem);
             this.context.SaveChanges();
             return shopItem;
