@@ -41,6 +41,15 @@ namespace server.Controllers {
 
         [HttpGet]
         [Authorize]
+        public IActionResult Buy(long id) {
+            var ShopItem = this.context.ShopItems
+                               .Where(s => s.Id == id)
+                               .FirstOrDefault();
+            return View(ShopItem);
+        }
+
+        [HttpGet]
+        [Authorize]
         public async Task<IActionResult> History(long id) {
             var ShopItem = this.context.ShopItems
                                .First(s => s.Id == id);

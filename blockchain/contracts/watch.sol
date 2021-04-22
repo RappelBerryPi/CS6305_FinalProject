@@ -8,7 +8,7 @@ contract WatchContract {
         address vendorAddress;
         address clientAddress;
         uint128 GUID;
-        uint    materialsRecievedTimeStamp;
+        uint    materialsReceivedTimeStamp;
         string  watchType;
         string  creationAddress;
         string  shippingAddress;
@@ -36,9 +36,9 @@ contract WatchContract {
         return returnWatch;
     }
 
-    function materialsRecieved(address vendorAddress, uint128 GUID) public {
+    function materialsReceived(address vendorAddress, uint128 GUID) public {
         Watch storage watch = getWatch(vendorAddress, GUID);
-        watch.materialsRecievedTimeStamp = block.timestamp;
+        watch.materialsReceivedTimeStamp = block.timestamp;
         watches[watch.GUID] = watch;
     }
 
@@ -49,16 +49,16 @@ contract WatchContract {
         watches[watch.GUID] = watch;
     }
 
-    function WatchSent(address vendorAddress,  uint128 WatchGUID, string memory sendingAddress, string memory recievingAddress) public {
+    function WatchSent(address vendorAddress,  uint128 WatchGUID, string memory sendingAddress, string memory receivingAddress) public {
         Watch storage watch = getWatch(vendorAddress, WatchGUID);
         require(StringsAreEqual(watch.creationAddress, sendingAddress));
         watch.sentTimeStamp = block.timestamp;
         watch.shippingAddress = sendingAddress;
-        watch.deliveryAddress = recievingAddress;
+        watch.deliveryAddress = receivingAddress;
         watches[watch.GUID] = watch;
     }
 
-    function WatchRecieved(address vendorAddress, uint128 WatchGUID) public {
+    function WatchReceived(address vendorAddress, uint128 WatchGUID) public {
         Watch storage watch = getWatch(vendorAddress, WatchGUID);
         watch.deliveredTimeStamp = block.timestamp;
         watches[watch.GUID] = watch;
@@ -80,8 +80,8 @@ contract WatchContract {
         return watches[GUID].GUID;
     }
 
-    function GetMaterialsRecievedTimeStamp(uint128 GUID) public view returns (uint) {
-        return watches[GUID].materialsRecievedTimeStamp;
+    function GetMaterialsReceivedTimeStamp(uint128 GUID) public view returns (uint) {
+        return watches[GUID].materialsReceivedTimeStamp;
     }
 
     function GetWatchType(uint128 GUID) public view returns (string memory) {

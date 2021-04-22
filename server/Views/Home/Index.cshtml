@@ -1,7 +1,16 @@
 ﻿@model server.Models.Database.Hello
 @{
+
+
+
     ViewData["Title"] = "Home Page";
+
+
+
     var Hellos = ViewData["Hellos"] as List<server.Models.Database.Hello>;
+
+
+
     var intvalue = ViewData["intValue"] as System.Nullable<System.Numerics.BigInteger>;
 }
 
@@ -119,40 +128,51 @@
             </div>
         </div>
     </section>
-    <table class="table">
-        <tr>
+    <br/>
+    @{
+            /*
+            <table class="table">
+            <tr>
             <th> Header </th>
             <th> Message </th>
             <th> Id </th>
-        </tr>
-        @foreach (var hello in Hellos)
-        {
-            <tr>
-                <td> @hello.Header </td>
-                <td> @hello.Message </td>
-                <td> @hello.Id </td>
             </tr>
-        }
-    </table>
-    <p>
-        @intvalue.Value.ToString()
-    </p>
-    @using (Html.BeginForm())
-    {
+            @foreach (var hello in Hellos)
+            {
+            <tr>
+            <td> @hello.Header </td>
+            <td> @hello.Message </td>
+            <td> @hello.Id </td>
+            </tr>
+            }
+            </table>
+        */
+    }
+    <section class="row">
+        <div class="col">
+            <h1>Simple Blockchain Number Update</h1>
+            <p>
+                @intvalue.Value.ToString()
+            </p>
+        </div>
+    </section>
+    @using (Html.BeginForm("IndexPost", "Home")) {
+        /*
         <section class="row">
-            <div class="col">
-                @Html.LabelFor(m => m.Header)
-                @Html.EditorFor(m => m.Header)
-            </div>
-            <div class="col">
-                @Html.LabelFor(m => m.Message)
-                @Html.EditorFor(m => m.Message)
-            </div>
+        <div class="col">
+        @Html.LabelFor(m => m.Header)
+        @Html.EditorFor(m => m.Header)
+        </div>
+        <div class="col">
+        @Html.LabelFor(m => m.Message)
+        @Html.EditorFor(m => m.Message)
+        </div>
         </section>
         <br />
+        */
         <section class="row">
             <div class="col">
-                <input type="submit">
+                <input type="submit" value="Update">
             </div>
         </section>
     }
@@ -163,9 +183,9 @@
 }
 
 @section head {
-    <style>
-        div > div > img.d-block {
-            margin: 0 auto;
-        }
-    </style>
+<style>
+    div>div>img.d-block {
+        margin: 0 auto;
+    }
+</style>
 }

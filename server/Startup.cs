@@ -52,6 +52,7 @@ namespace server {
             });
 
             services.Configure<EthereumServerSettings>(Configuration.GetSection(EthereumServerSettings.SectionName));
+            services.AddScoped<ContractService>();
 
             IMvcBuilder builder = services.AddRazorPages();
             if (Env.IsDevelopment()) {

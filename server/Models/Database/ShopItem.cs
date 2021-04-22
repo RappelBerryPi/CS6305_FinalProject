@@ -25,6 +25,4 @@ namespace server.Models.Database {
         public string GUID { get; set; }
 
     }
-    // HACK: maybe the purchased by and block address don't belong here?
-
 }

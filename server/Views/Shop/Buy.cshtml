@@ -1,0 +1,19 @@
+@model server.Models.Database.ShopItem
+@{
+    ViewData["Title"] = "Buy";
+}
+
+<section class="row">
+    <div class="col text-center">
+        <h1>Normally this is where you would enter credit card information</h1>
+        <p>
+            Because this site isn't necessarily for that but
+            more for the integrity model that is provided by blockchain this section has not been implemented.
+        </p>
+    </div>
+</section>
+<section class="row">
+    <div class="col text-center">
+        <a class="btn btn-danger" style="min-width: 7rem" asp-controller="Shop" asp-action="View" asp-route-id="@Model.Id">Back</a>
+    </div>
+</section>

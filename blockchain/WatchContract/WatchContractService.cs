@@ -126,18 +126,18 @@ namespace Blockchain.Contracts.WatchContract
             return ContractHandler.QueryAsync<GetGUIDFunction, BigInteger>(getGUIDFunction, blockParameter);
         }
 
-        public Task<BigInteger> GetMaterialsRecievedTimeStampQueryAsync(GetMaterialsRecievedTimeStampFunction getMaterialsRecievedTimeStampFunction, BlockParameter blockParameter = null)
+        public Task<BigInteger> GetMaterialsReceivedTimeStampQueryAsync(GetMaterialsReceivedTimeStampFunction getMaterialsReceivedTimeStampFunction, BlockParameter blockParameter = null)
         {
-            return ContractHandler.QueryAsync<GetMaterialsRecievedTimeStampFunction, BigInteger>(getMaterialsRecievedTimeStampFunction, blockParameter);
+            return ContractHandler.QueryAsync<GetMaterialsReceivedTimeStampFunction, BigInteger>(getMaterialsReceivedTimeStampFunction, blockParameter);
         }
 
         
-        public Task<BigInteger> GetMaterialsRecievedTimeStampQueryAsync(BigInteger gUID, BlockParameter blockParameter = null)
+        public Task<BigInteger> GetMaterialsReceivedTimeStampQueryAsync(BigInteger gUID, BlockParameter blockParameter = null)
         {
-            var getMaterialsRecievedTimeStampFunction = new GetMaterialsRecievedTimeStampFunction();
-                getMaterialsRecievedTimeStampFunction.GUID = gUID;
+            var getMaterialsReceivedTimeStampFunction = new GetMaterialsReceivedTimeStampFunction();
+                getMaterialsReceivedTimeStampFunction.GUID = gUID;
             
-            return ContractHandler.QueryAsync<GetMaterialsRecievedTimeStampFunction, BigInteger>(getMaterialsRecievedTimeStampFunction, blockParameter);
+            return ContractHandler.QueryAsync<GetMaterialsReceivedTimeStampFunction, BigInteger>(getMaterialsReceivedTimeStampFunction, blockParameter);
         }
 
         public Task<BigInteger> GetSentTimeStampQueryAsync(GetSentTimeStampFunction getSentTimeStampFunction, BlockParameter blockParameter = null)
@@ -241,32 +241,32 @@ namespace Blockchain.Contracts.WatchContract
              return ContractHandler.SendRequestAndWaitForReceiptAsync(watchAssembledFunction, cancellationToken);
         }
 
-        public Task<string> WatchRecievedRequestAsync(WatchRecievedFunction watchRecievedFunction)
+        public Task<string> WatchReceivedRequestAsync(WatchReceivedFunction watchReceivedFunction)
         {
-             return ContractHandler.SendRequestAsync(watchRecievedFunction);
+             return ContractHandler.SendRequestAsync(watchReceivedFunction);
         }
 
-        public Task<TransactionReceipt> WatchRecievedRequestAndWaitForReceiptAsync(WatchRecievedFunction watchRecievedFunction, CancellationTokenSource cancellationToken = null)
+        public Task<TransactionReceipt> WatchReceivedRequestAndWaitForReceiptAsync(WatchReceivedFunction watchReceivedFunction, CancellationTokenSource cancellationToken = null)
         {
-             return ContractHandler.SendRequestAndWaitForReceiptAsync(watchRecievedFunction, cancellationToken);
+             return ContractHandler.SendRequestAndWaitForReceiptAsync(watchReceivedFunction, cancellationToken);
         }
 
-        public Task<string> WatchRecievedRequestAsync(string vendorAddress, BigInteger watchGUID)
+        public Task<string> WatchReceivedRequestAsync(string vendorAddress, BigInteger watchGUID)
         {
-            var watchRecievedFunction = new WatchRecievedFunction();
-                watchRecievedFunction.VendorAddress = vendorAddress;
-                watchRecievedFunction.WatchGUID = watchGUID;
+            var watchReceivedFunction = new WatchReceivedFunction();
+                watchReceivedFunction.VendorAddress = vendorAddress;
+                watchReceivedFunction.WatchGUID = watchGUID;
             
-             return ContractHandler.SendRequestAsync(watchRecievedFunction);
+             return ContractHandler.SendRequestAsync(watchReceivedFunction);
         }
 
-        public Task<TransactionReceipt> WatchRecievedRequestAndWaitForReceiptAsync(string vendorAddress, BigInteger watchGUID, CancellationTokenSource cancellationToken = null)
+        public Task<TransactionReceipt> WatchReceivedRequestAndWaitForReceiptAsync(string vendorAddress, BigInteger watchGUID, CancellationTokenSource cancellationToken = null)
         {
-            var watchRecievedFunction = new WatchRecievedFunction();
-                watchRecievedFunction.VendorAddress = vendorAddress;
-                watchRecievedFunction.WatchGUID = watchGUID;
+            var watchReceivedFunction = new WatchReceivedFunction();
+                watchReceivedFunction.VendorAddress = vendorAddress;
+                watchReceivedFunction.WatchGUID = watchGUID;
             
-             return ContractHandler.SendRequestAndWaitForReceiptAsync(watchRecievedFunction, cancellationToken);
+             return ContractHandler.SendRequestAndWaitForReceiptAsync(watchReceivedFunction, cancellationToken);
         }
 
         public Task<string> WatchSentRequestAsync(WatchSentFunction watchSentFunction)
@@ -279,24 +279,24 @@ namespace Blockchain.Contracts.WatchContract
              return ContractHandler.SendRequestAndWaitForReceiptAsync(watchSentFunction, cancellationToken);
         }
 
-        public Task<string> WatchSentRequestAsync(string vendorAddress, BigInteger watchGUID, string sendingAddress, string recievingAddress)
+        public Task<string> WatchSentRequestAsync(string vendorAddress, BigInteger watchGUID, string sendingAddress, string receivingAddress)
         {
             var watchSentFunction = new WatchSentFunction();
                 watchSentFunction.VendorAddress = vendorAddress;
                 watchSentFunction.WatchGUID = watchGUID;
                 watchSentFunction.SendingAddress = sendingAddress;
-                watchSentFunction.RecievingAddress = recievingAddress;
+                watchSentFunction.ReceivingAddress = receivingAddress;
             
              return ContractHandler.SendRequestAsync(watchSentFunction);
         }
 
-        public Task<TransactionReceipt> WatchSentRequestAndWaitForReceiptAsync(string vendorAddress, BigInteger watchGUID, string sendingAddress, string recievingAddress, CancellationTokenSource cancellationToken = null)
+        public Task<TransactionReceipt> WatchSentRequestAndWaitForReceiptAsync(string vendorAddress, BigInteger watchGUID, string sendingAddress, string receivingAddress, CancellationTokenSource cancellationToken = null)
         {
             var watchSentFunction = new WatchSentFunction();
                 watchSentFunction.VendorAddress = vendorAddress;
                 watchSentFunction.WatchGUID = watchGUID;
                 watchSentFunction.SendingAddress = sendingAddress;
-                watchSentFunction.RecievingAddress = recievingAddress;
+                watchSentFunction.ReceivingAddress = receivingAddress;
             
              return ContractHandler.SendRequestAndWaitForReceiptAsync(watchSentFunction, cancellationToken);
         }
@@ -331,32 +331,32 @@ namespace Blockchain.Contracts.WatchContract
              return ContractHandler.SendRequestAndWaitForReceiptAsync(createWatchFunction, cancellationToken);
         }
 
-        public Task<string> MaterialsRecievedRequestAsync(MaterialsRecievedFunction materialsRecievedFunction)
+        public Task<string> MaterialsReceivedRequestAsync(MaterialsReceivedFunction materialsReceivedFunction)
         {
-             return ContractHandler.SendRequestAsync(materialsRecievedFunction);
+             return ContractHandler.SendRequestAsync(materialsReceivedFunction);
         }
 
-        public Task<TransactionReceipt> MaterialsRecievedRequestAndWaitForReceiptAsync(MaterialsRecievedFunction materialsRecievedFunction, CancellationTokenSource cancellationToken = null)
+        public Task<TransactionReceipt> MaterialsReceivedRequestAndWaitForReceiptAsync(MaterialsReceivedFunction materialsReceivedFunction, CancellationTokenSource cancellationToken = null)
         {
-             return ContractHandler.SendRequestAndWaitForReceiptAsync(materialsRecievedFunction, cancellationToken);
+             return ContractHandler.SendRequestAndWaitForReceiptAsync(materialsReceivedFunction, cancellationToken);
         }
 
-        public Task<string> MaterialsRecievedRequestAsync(string vendorAddress, BigInteger gUID)
+        public Task<string> MaterialsReceivedRequestAsync(string vendorAddress, BigInteger gUID)
         {
-            var materialsRecievedFunction = new MaterialsRecievedFunction();
-                materialsRecievedFunction.VendorAddress = vendorAddress;
-                materialsRecievedFunction.GUID = gUID;
+            var materialsReceivedFunction = new MaterialsReceivedFunction();
+                materialsReceivedFunction.VendorAddress = vendorAddress;
+                materialsReceivedFunction.GUID = gUID;
             
-             return ContractHandler.SendRequestAsync(materialsRecievedFunction);
+             return ContractHandler.SendRequestAsync(materialsReceivedFunction);
         }
 
-        public Task<TransactionReceipt> MaterialsRecievedRequestAndWaitForReceiptAsync(string vendorAddress, BigInteger gUID, CancellationTokenSource cancellationToken = null)
+        public Task<TransactionReceipt> MaterialsReceivedRequestAndWaitForReceiptAsync(string vendorAddress, BigInteger gUID, CancellationTokenSource cancellationToken = null)
         {
-            var materialsRecievedFunction = new MaterialsRecievedFunction();
-                materialsRecievedFunction.VendorAddress = vendorAddress;
-                materialsRecievedFunction.GUID = gUID;
+            var materialsReceivedFunction = new MaterialsReceivedFunction();
+                materialsReceivedFunction.VendorAddress = vendorAddress;
+                materialsReceivedFunction.GUID = gUID;
             
-             return ContractHandler.SendRequestAndWaitForReceiptAsync(materialsRecievedFunction, cancellationToken);
+             return ContractHandler.SendRequestAndWaitForReceiptAsync(materialsReceivedFunction, cancellationToken);
         }
     }
 }

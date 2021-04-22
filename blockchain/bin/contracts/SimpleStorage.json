@@ -28,15 +28,15 @@
             "type": "function"
         }
     ],
-    "metadata": "{\"compiler\":{\"version\":\"0.8.3+commit.8d00100c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"get\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"x\",\"type\":\"uint256\"}],\"name\":\"set\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"d:/Projects/CS6305_FinalProject/blockchain/contracts/index.sol\":\"SimpleStorage\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"d:/Projects/CS6305_FinalProject/blockchain/contracts/index.sol\":{\"keccak256\":\"0x7a4f91c3bb21ba4885e16ae8d6d6946597ddb6e4acc08e73e1cb5630bfbb757c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2717dd150baec742363ab1901c2e6f9dbddc2a27f8413884870b785d23c5e3c5\",\"dweb:/ipfs/QmWMmPhaQc8KuQGjPAVEa3bEhQhDazUQkfrTU6VwMS7SHi\"]}},\"version\":1}",
-    "bytecode": "6080604052348015600f57600080fd5b5060ab8061001e6000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c806360fe47b11460375780636d4ce63c146049575b600080fd5b60476042366004605e565b600055565b005b60005460405190815260200160405180910390f35b600060208284031215606e578081fd5b503591905056fea26469706673582212203d59c1ddc62c8a4bc1931c217d3f99c67f502be1b13f6fb31e93fd04f95c3d4b64736f6c63430008030033",
-    "deployedBytecode": "6080604052348015600f57600080fd5b506004361060325760003560e01c806360fe47b11460375780636d4ce63c146049575b600080fd5b60476042366004605e565b600055565b005b60005460405190815260200160405180910390f35b600060208284031215606e578081fd5b503591905056fea26469706673582212203d59c1ddc62c8a4bc1931c217d3f99c67f502be1b13f6fb31e93fd04f95c3d4b64736f6c63430008030033",
+    "metadata": "{\"compiler\":{\"version\":\"0.8.4+commit.c7e474f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"get\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"x\",\"type\":\"uint256\"}],\"name\":\"set\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"d:/Projects/CS6305_FinalProject/blockchain/contracts/index.sol\":\"SimpleStorage\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"d:/Projects/CS6305_FinalProject/blockchain/contracts/index.sol\":{\"keccak256\":\"0x7a4f91c3bb21ba4885e16ae8d6d6946597ddb6e4acc08e73e1cb5630bfbb757c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2717dd150baec742363ab1901c2e6f9dbddc2a27f8413884870b785d23c5e3c5\",\"dweb:/ipfs/QmWMmPhaQc8KuQGjPAVEa3bEhQhDazUQkfrTU6VwMS7SHi\"]}},\"version\":1}",
+    "bytecode": "6080604052348015600f57600080fd5b5060ab8061001e6000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c806360fe47b11460375780636d4ce63c146049575b600080fd5b60476042366004605e565b600055565b005b60005460405190815260200160405180910390f35b600060208284031215606e578081fd5b503591905056fea26469706673582212206c004ef39de658840815d414076ffabc01604a99aefbe93f565945c4f82fb7dc64736f6c63430008040033",
+    "deployedBytecode": "6080604052348015600f57600080fd5b506004361060325760003560e01c806360fe47b11460375780636d4ce63c146049575b600080fd5b60476042366004605e565b600055565b005b60005460405190815260200160405180910390f35b600060208284031215606e578081fd5b503591905056fea26469706673582212206c004ef39de658840815d414076ffabc01604a99aefbe93f565945c4f82fb7dc64736f6c63430008040033",
     "sourceMap": "59:195:0:-:0;;;;;;;;;;;;;;;;;;;",
-    "deployedSourceMap": "59:195:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;110:59;;;;;;:::i;:::-;148:10;:14;110:59;;;175:76;211:4;234:10;175:76;;355:25:2;;;343:2;328:18;175:76:0;;;;;;;14:190:2;;126:2;114:9;105:7;101:23;97:32;94:2;;;147:6;139;132:22;94:2;-1:-1:-1;175:23:2;;84:120;-1:-1:-1;84:120:2:o",
+    "deployedSourceMap": "59:195:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;110:59;;;;;;:::i;:::-;148:10;:14;110:59;;;175:76;211:4;234:10;175:76;;355:25:2;;;343:2;328:18;175:76:0;;;;;;;14:190:2;73:6;126:2;114:9;105:7;101:23;97:32;94:2;;;147:6;139;132:22;94:2;-1:-1:-1;175:23:2;;84:120;-1:-1:-1;84:120:2:o",
     "sourcePath": "d:/Projects/CS6305_FinalProject/blockchain/contracts/index.sol",
     "compiler": {
         "name": "solc",
-        "version": "0.8.3+commit.8d00100c"
+        "version": "0.8.4+commit.c7e474f2"
     },
     "ast": {
         "absolutePath": "d:/Projects/CS6305_FinalProject/blockchain/contracts/index.sol",
@@ -288,7 +288,8 @@
                     }
                 ],
                 "scope": 23,
-                "src": "59:195:0"
+                "src": "59:195:0",
+                "usedErrors": []
             }
         ],
         "src": "32:222:0"
