@@ -1,7 +1,5 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using server.Models.Database;
-using server.Services.Validation.Attributes;
 
 namespace server.Models.Validation {
     public class NewWatchForm : BasicApiValidationForm {

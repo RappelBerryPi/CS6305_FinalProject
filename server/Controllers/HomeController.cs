@@ -1,19 +1,10 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Linq;
 using System.Numerics;
-using System.Threading.Tasks;
-using Blockchain.Contracts.SimpleStorage;
-using Blockchain.Contracts.SimpleStorage.ContractDefinition;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using Nethereum.RPC.Eth.DTOs;
-using Nethereum.Web3;
-using Nethereum.Web3.Accounts;
 using server.Models;
 using server.Models.Database;
-using server.Models.Settings;
 using server.Services;
 
 namespace server.Controllers {

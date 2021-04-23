@@ -17,7 +17,7 @@
             {
                 <div class="form-group">
                     @Html.LabelFor(m => m.DualAuthCode)
-                    @Html.TextBoxFor(m => m.DualAuthCode, new { @class = "form-control", @PlaceHolder = "000000"})
+                    @Html.TextBoxFor(m => m.DualAuthCode, new { @class = "form-control", @PlaceHolder = "000000", @autofocus = "true"})
                     @Html.ValidationMessageFor(m => m.DualAuthCode)
                 </div>
                 <input type="submit" class="btn btn-primary">

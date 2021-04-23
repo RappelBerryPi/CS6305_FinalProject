@@ -1,7 +1,6 @@
 using System;
 using System.Linq;
 using System.Numerics;
-using System.Threading.Tasks;
 using Blockchain.Contracts.SimpleStorage;
 using Blockchain.Contracts.SimpleStorage.ContractDefinition;
 using Blockchain.Contracts.WatchContract;
