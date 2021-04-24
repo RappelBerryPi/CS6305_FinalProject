@@ -23,4 +23,4 @@ $PostData = @{
 $json = $PostData | ConvertTo-Json
 write-output $json
 
-Invoke-WebRequest -Uri "https://localhost:5001/api/Info/${GUID}/WatchAssembled" -Method Patch -Body $json -ContentType "application/json"
+Invoke-WebRequest -Uri "https://appelbreyer.azurewebsites.net/api/Info/${GUID}/WatchAssembled" -Method Patch -Body $json -ContentType "application/json"

@@ -30,4 +30,4 @@ $PostData = @{
 
 write-output ($PostData | ConvertTo-Json)
 
-Invoke-WebRequest -Uri "https://localhost:5001/api/Info/NewWatch" -Method Post -Body ($PostData | ConvertTo-Json) -ContentType "application/json"
+Invoke-WebRequest -Uri "https://appelbreyer.azurewebsites.net/api/Info/NewWatch" -Method Post -Body ($PostData | ConvertTo-Json) -ContentType "application/json"
