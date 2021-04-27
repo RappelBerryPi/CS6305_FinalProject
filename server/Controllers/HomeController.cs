@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Linq;
 using System.Numerics;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using server.Models;
@@ -19,8 +20,8 @@ namespace server.Controllers {
             this.ContractService = contractService;
         }
 
-        public IActionResult Index() {
-            BigInteger intValue = ContractService.SimpleServiceGetCall();
+        public async Task<IActionResult> Index() {
+            BigInteger intValue = await ContractService.SimpleServiceGetCall();
             var Hellos = this.context.Hellos.OrderBy(H => H.Id).ToList();
             this.ViewData.Add("Hellos", Hellos);
             this.ViewData.Add("intValue", intValue);
@@ -28,8 +29,8 @@ namespace server.Controllers {
         }
 
         [HttpPost]
-        public IActionResult IndexPost() {
-            this.ContractService.SimpleServiceSetCall(new System.Random().Next());
+        public async Task<IActionResult> IndexPost() {
+            await this.ContractService.SimpleServiceSetCall(new System.Random().Next());
             return RedirectToAction("Index");
         }
 

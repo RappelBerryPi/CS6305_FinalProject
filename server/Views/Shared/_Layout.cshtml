@@ -33,22 +33,21 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Shop" asp-action="Index">Shop</a>
                         </li>
                     </ul>
-                    <span class="navbar-text">
                         @if (User?.Identity?.IsAuthenticated ?? false)
                         {
+                        <span class="navbar-text mr-sm-2">
                             @User.Identity.Name
-                            <button type="button" class="btn btn-danger">
-                                <a class="text-light" asp-area="" asp-controller="User" asp-action="Logout">Logout</a>
-                            </button>
+                        </span>
+                        <span class="navbar-text my-2 my-sm-0">
+                            <a class="text-light btn btn-danger" asp-area="" asp-controller="User" asp-action="Logout">Logout</a>
+                        </span>
                         }
                         else
                         {
-                            <button type="button" class="btn btn-success">
-                                <a class="text-light" asp-area="" asp-controller="User" asp-action="Login">Login</a>
-                            </button>
-
+                        <span class="navbar-text">
+                            <a class="text-light btn btn-success" asp-area="" asp-controller="User" asp-action="Login">Login</a>
+                        </span>
                         }
-                    </span>
                 </div>
             </div>
         </nav>

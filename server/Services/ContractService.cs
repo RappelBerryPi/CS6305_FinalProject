@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using System.Numerics;
+using System.Threading.Tasks;
 using Blockchain.Contracts.SimpleStorage;
 using Blockchain.Contracts.SimpleStorage.ContractDefinition;
 using Blockchain.Contracts.WatchContract;
@@ -158,17 +159,17 @@ namespace server.Services {
             return GetWatch(guid);
         }
 
-        public BigInteger SimpleServiceGetCall() {
+        public async Task<BigInteger> SimpleServiceGetCall() {
             this.setupSimpleStorageContractCall();
-            return this.simpleStorageService.GetQueryAsync().GetAwaiter().GetResult();
+            return await this.simpleStorageService.GetQueryAsync();
         }
 
-        public string SimpleServiceSetCall(int x) {
+        public async Task<string> SimpleServiceSetCall(int x) {
             this.setupSimpleStorageContractCall();
-            return this.simpleStorageService.SetRequestAsync(new SetFunction() {
+            return await this.simpleStorageService.SetRequestAsync(new SetFunction() {
                 X = x,
                 GasPrice = 0
-            }).GetAwaiter().GetResult();
+            });
         }
 
         private ContractDeployment GetContractDeployment<T>() where T : ContractDeploymentMessage, new() {

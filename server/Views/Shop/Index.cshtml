@@ -25,7 +25,7 @@ else
         <section class="row">
             @for (int j = i; j < (i + 3) && j < ShopItems.Count; j++) {
                 var item = ShopItems[j];
-                <div class="col-4">
+                <div class="col-lg-4">
                     <div class="card">
                         <img class="card-img-top" src="@(item.PictureUrl ?? "/images/main.gif")" alt="@item.ImgAltText">
                         <div class="card-body">

@@ -1,51 +1,62 @@
 @model server.Models.BlockchainStructs.Watch
 @{
     ViewData["Title"] = "History";
-    long id = (long) ViewData["id"];
+    long id = (long)ViewData["id"];
 }
 
-<table class="table table-striped table-hover">
-    <tbody>
-        <tr>
-            <th scope="row"> @Html.LabelFor(model => model.VendorAddress) </th>
-            <td> @Html.ValueFor(model => model.VendorAddress) </td>
-        </tr>
-        <tr>
-            <th scope="row"> @Html.LabelFor(model => model.ClientAddress) </th>
-            <td> @Html.ValueFor(model => model.ClientAddress) </td>
-        </tr>
-        <tr>
-            <th scope="row"> @Html.LabelFor(model => model.WatchType) </th>
-            <td> @Html.ValueFor(model => model.WatchType) </td>
-        </tr>
-        <tr>
-            <th scope="row"> @Html.LabelFor(model => model.GUID) </th>
-            <td> @Html.ValueFor(model => model.GUID) </td>
-        </tr>
-        <tr>
-            <th scope="row"> Materials Recieved at: </th>
-            <td> @Html.ValueFor(model => model.MaterialsReceivedTimeStamp) </th>
-        </tr>
-    </tbody>
-</table>
-<table class="table table-striped table-hover">
-    <tbody>
-        <tr>
-            <th scope="row"> Created </th>
-            <td> @Html.ValueFor(model => model.CreationAddress) </td>
-            <td> @Html.ValueFor(model => model.AssembledTimeStamp) </td>
-        </tr>
-        <tr>
-            <th scope="row"> Shipped From </th>
-            <td> @Html.ValueFor(model => model.ShippingAddress) </th>
-            <td> @Html.ValueFor(model => model.SentTimeStamp) </th>
-        </tr>
-        <tr>
-            <th scope="row"> Delivered to </th>
-            <td> @Html.ValueFor(model => model.DeliveryAddress) </th>
-            <td> @Html.ValueFor(model => model.DeliveredTimeStamp) </th>
-        </tr>
-    </tbody>
-</table>
+<div>
+
+    <table class="table table-striped table-hover">
+        <tbody>
+            <tr>
+                <th scope="row"> @Html.LabelFor(model => model.VendorAddress) </th>
+                <td> @Html.ValueFor(model => model.VendorAddress) </td>
+            </tr>
+            <tr>
+                <th scope="row"> @Html.LabelFor(model => model.ClientAddress) </th>
+                <td> @Html.ValueFor(model => model.ClientAddress) </td>
+            </tr>
+            <tr>
+                <th scope="row"> @Html.LabelFor(model => model.WatchType) </th>
+                <td> @Html.ValueFor(model => model.WatchType) </td>
+            </tr>
+            <tr>
+                <th scope="row"> @Html.LabelFor(model => model.GUID) </th>
+                <td> @Html.ValueFor(model => model.GUID) </td>
+            </tr>
+            <tr>
+                <th scope="row"> Materials Recieved at: </th>
+                <td> @Html.ValueFor(model => model.MaterialsReceivedTimeStamp) </th>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-striped table-hover">
+        <tbody>
+            <tr>
+                <th scope="row"> Created </th>
+                <td> @Html.ValueFor(model => model.CreationAddress) </td>
+                <td> @Html.ValueFor(model => model.AssembledTimeStamp) </td>
+            </tr>
+            <tr>
+                <th scope="row"> Shipped From </th>
+                <td> @Html.ValueFor(model => model.ShippingAddress) </th>
+                <td> @Html.ValueFor(model => model.SentTimeStamp) </th>
+            </tr>
+            <tr>
+                <th scope="row"> Delivered to </th>
+                <td> @Html.ValueFor(model => model.DeliveryAddress) </th>
+                <td> @Html.ValueFor(model => model.DeliveredTimeStamp) </th>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 <a class="btn btn-danger" style="min-width: 7rem" asp-controller="Shop" asp-action="View" asp-route-id="@id">Back</a>
+
+@section head {
+<style>
+    div {
+        overflow-x: scroll;
+    }
+</style>
+}

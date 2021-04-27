@@ -11,8 +11,8 @@
         </div>
     </section>
     <section class="row">
-        <div class="col-3"></div>
-        <div class="col-6">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
             @using (Html.BeginForm())
             {
                 <div class="form-group">
@@ -20,9 +20,10 @@
                     @Html.TextBoxFor(m => m.DualAuthCode, new { @class = "form-control", @PlaceHolder = "000000", @autofocus = "true"})
                     @Html.ValidationMessageFor(m => m.DualAuthCode)
                 </div>
-                <input type="submit" class="btn btn-primary">
+                <input type="submit" class="btn btn-primary" value="Submit code">
             }
         </div>
+        <div class="col-lg-3"></div>
     </section>
 </div>
 
