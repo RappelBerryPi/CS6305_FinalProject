@@ -4,8 +4,7 @@
     long id = (long)ViewData["id"];
 }
 
-<div>
-
+<div class="overflow-auto">
     <table class="table table-striped table-hover">
         <tbody>
             <tr>
@@ -52,11 +51,3 @@
 </div>
 
 <a class="btn btn-danger" style="min-width: 7rem" asp-controller="Shop" asp-action="View" asp-route-id="@id">Back</a>
-
-@section head {
-<style>
-    div {
-        overflow-x: scroll;
-    }
-</style>
-}
